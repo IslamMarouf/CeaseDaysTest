@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CeaseDaysFormatter.cs" />
     <Compile Include="RadForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <!--sirinie -->
+    <Content Include="Notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
