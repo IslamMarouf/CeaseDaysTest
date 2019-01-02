@@ -1,0 +1,16 @@
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\TelerikWinFormsApp1.exe.config
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\TelerikWinFormsApp1.exe
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\TelerikWinFormsApp1.pdb
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\Telerik.WinControls.dll
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\Telerik.WinControls.UI.dll
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\TelerikCommon.dll
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\Telerik.WinControls.xml
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\Telerik.WinControls.UI.xml
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.csprojResolveAssemblyReference.cache
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.RadForm1.resources
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.Properties.Resources.resources
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.csproj.GenerateResource.Cache
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.exe
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.pdb
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\bin\Debug\Telerik.WinControls.Themes.Material.dll
+c:\users\soli\documents\visual studio 2015\Projects\TelerikWinFormsApp1\TelerikWinFormsApp1\obj\x86\Debug\TelerikWinFormsApp1.exe.licenses
