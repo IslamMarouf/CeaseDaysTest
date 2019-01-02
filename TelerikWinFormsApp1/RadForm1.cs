@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
 using Telerik.WinControls.UI;
 
-namespace TelerikWinFormsApp1 {
-    public partial class RadForm1 : RadForm {
-        public class ConsecutiveDate {
+namespace TelerikWinFormsApp1
+{
+    public partial class RadForm1 : RadForm
+    {
+        public class ConsecutiveDate
+        {
             public DateTime Date1;
             public DateTime Date2;
         }
@@ -147,8 +149,10 @@ namespace TelerikWinFormsApp1 {
 //
 //	This class simulates the behavior of the classic VB 'DateDiff' function.
 //----------------------------------------------------------------------------------------
-        public static class Simulate {
-            public enum DateInterval {
+        public static class Simulate
+        {
+            public enum DateInterval
+            {
                 Day,
                 DayOfYear,
                 Hour,
@@ -161,45 +165,49 @@ namespace TelerikWinFormsApp1 {
                 Year
             }
 
-            public static long DateDiff(DateInterval intervalType, DateTime dateOne, DateTime dateTwo) {
-                switch (intervalType) {
+            public static long DateDiff(DateInterval intervalType, DateTime dateOne, DateTime dateTwo)
+            {
+                switch (intervalType)
+                {
                     case DateInterval.Day:
                     case DateInterval.DayOfYear:
                         TimeSpan spanForDays = dateTwo - dateOne;
-                        return (long) spanForDays.TotalDays;
+                        return (long)spanForDays.TotalDays;
                     case DateInterval.Hour:
                         TimeSpan spanForHours = dateTwo - dateOne;
-                        return (long) spanForHours.TotalHours;
+                        return (long)spanForHours.TotalHours;
                     case DateInterval.Minute:
                         TimeSpan spanForMinutes = dateTwo - dateOne;
-                        return (long) spanForMinutes.TotalMinutes;
+                        return (long)spanForMinutes.TotalMinutes;
                     case DateInterval.Month:
                         return ((dateTwo.Year - dateOne.Year) * 12) + (dateTwo.Month - dateOne.Month);
                     case DateInterval.Quarter:
-                        long dateOneQuarter = (long) Math.Ceiling(dateOne.Month / 3.0);
-                        long dateTwoQuarter = (long) Math.Ceiling(dateTwo.Month / 3.0);
+                        long dateOneQuarter = (long)Math.Ceiling(dateOne.Month / 3.0);
+                        long dateTwoQuarter = (long)Math.Ceiling(dateTwo.Month / 3.0);
                         return (4 * (dateTwo.Year - dateOne.Year)) + dateTwoQuarter - dateOneQuarter;
                     case DateInterval.Second:
                         TimeSpan spanForSeconds = dateTwo - dateOne;
-                        return (long) spanForSeconds.TotalSeconds;
+                        return (long)spanForSeconds.TotalSeconds;
                     case DateInterval.Weekday:
                         TimeSpan spanForWeekdays = dateTwo - dateOne;
-                        return (long) (spanForWeekdays.TotalDays / 7.0);
+                        return (long)(spanForWeekdays.TotalDays / 7.0);
                     case DateInterval.WeekOfYear:
                         DateTime dateOneModified = dateOne;
                         DateTime dateTwoModified = dateTwo;
-                        while (dateTwoModified.DayOfWeek !=
-                               System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek) {
+                        while (System.Globalization.DateTimeFormatInfo.CurrentInfo != null && dateTwoModified.DayOfWeek !=
+                               System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                        {
                             dateTwoModified = dateTwoModified.AddDays(-1);
                         }
 
-                        while (dateOneModified.DayOfWeek !=
-                               System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek) {
+                        while (System.Globalization.DateTimeFormatInfo.CurrentInfo != null && dateOneModified.DayOfWeek !=
+                               System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                        {
                             dateOneModified = dateOneModified.AddDays(-1);
                         }
 
                         TimeSpan spanForWeekOfYear = dateTwoModified - dateOneModified;
-                        return (long) (spanForWeekOfYear.TotalDays / 7.0);
+                        return (long)(spanForWeekOfYear.TotalDays / 7.0);
                     case DateInterval.Year:
                         return dateTwo.Year - dateOne.Year;
                     default:

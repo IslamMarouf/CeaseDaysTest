@@ -42,14 +42,14 @@
             this.radCalendar1.AllowMultipleSelect = true;
             this.radCalendar1.AllowViewSelector = true;
             this.radCalendar1.FirstDayOfWeek = Telerik.WinControls.UI.FirstDayOfWeek.Sunday;
-            this.radCalendar1.Location = new System.Drawing.Point(12, 12);
+            this.radCalendar1.Location = new System.Drawing.Point(275, 12);
             this.radCalendar1.Name = "radCalendar1";
             this.radCalendar1.Size = new System.Drawing.Size(257, 227);
             this.radCalendar1.TabIndex = 0;
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(71, 478);
+            this.radButton1.Location = new System.Drawing.Point(12, 245);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(110, 24);
             this.radButton1.TabIndex = 2;
@@ -58,7 +58,7 @@
             // 
             // radTextBoxControl1
             // 
-            this.radTextBoxControl1.Location = new System.Drawing.Point(12, 245);
+            this.radTextBoxControl1.Location = new System.Drawing.Point(12, 12);
             this.radTextBoxControl1.Multiline = true;
             this.radTextBoxControl1.Name = "radTextBoxControl1";
             this.radTextBoxControl1.Size = new System.Drawing.Size(257, 227);
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 514);
+            this.ClientSize = new System.Drawing.Size(539, 275);
             this.Controls.Add(this.radTextBoxControl1);
             this.Controls.Add(this.radButton1);
             this.Controls.Add(this.radCalendar1);
