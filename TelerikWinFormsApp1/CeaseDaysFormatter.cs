@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Telerik.WinControls.UI;
 
 namespace TelerikWinFormsApp1
@@ -12,7 +13,10 @@ namespace TelerikWinFormsApp1
     //-----------------------------------------------------------------------------------------------
     public class CeaseDaysFormatter
     {
-        private DateTimeCollection Dates { get; }
+        public DateTimeCollection Dates { get; set; }
+
+        public CeaseDaysFormatter() {
+        }
 
         public CeaseDaysFormatter(DateTimeCollection dates) {
             Dates = dates;
@@ -30,7 +34,7 @@ namespace TelerikWinFormsApp1
             Weekday,
             WeekOfYear,
             Year
-        }     
+        }
 
         public static long DateDiff(DateInterval intervalType, DateTime dateOne, DateTime dateTwo) {
             switch (intervalType) {
@@ -79,7 +83,26 @@ namespace TelerikWinFormsApp1
         }
 
         public override string ToString() {
-            return string.Empty;
+            string datesStr = string.Empty;
+
+            var qDates = from dt in Dates
+                    .OrderBy(dt => dt.Month)
+                    .ThenBy(dt => dt.Day)
+                    .GroupBy(dt => dt.Month)
+                    .OrderBy(dt => dt.Key)
+                select dt;
+
+            foreach (var dates in qDates) {
+                foreach (DateTime date in dates) {
+                    datesStr += date.ToShortDateString() + "-";
+                }
+
+                datesStr = datesStr.TrimEnd('-');
+
+                datesStr += "\n";
+            }
+
+            return datesStr.TrimEnd('-');
         }
     }
 }
