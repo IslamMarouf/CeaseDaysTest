@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
 namespace TelerikWinFormsApp1
@@ -14,12 +15,26 @@ namespace TelerikWinFormsApp1
     public class CeaseDaysFormatter
     {
         public DateTimeCollection Dates { get; set; }
+        private List<DateTime> DatesList;
 
         public CeaseDaysFormatter() {
+            DatesList = new List<DateTime>();
         }
 
         public CeaseDaysFormatter(DateTimeCollection dates) {
             Dates = dates;
+            ArrangeDates(Dates);
+        }
+
+        private void ArrangeDates(DateTimeCollection dates) {
+            IOrderedEnumerable<DateTime> ordered = Dates.OrderBy(dt => dt.Month).ThenBy(dt => dt.Day);
+            IOrderedEnumerable<DateTime> orderedByYear = ordered.OrderBy(dt => dt.Year);
+
+
+            foreach (DateTime date in orderedByYear)
+            {
+                DatesList.Add(date);
+            }
         }
 
         public enum DateInterval
@@ -85,24 +100,15 @@ namespace TelerikWinFormsApp1
         public override string ToString() {
             string datesStr = string.Empty;
 
-            var qDates = from dt in Dates
-                    .OrderBy(dt => dt.Month)
-                    .ThenBy(dt => dt.Day)
-                    .GroupBy(dt => dt.Month)
-                    .OrderBy(dt => dt.Key)
-                select dt;
-
-            foreach (var dates in qDates) {
-                foreach (DateTime date in dates) {
-                    datesStr += date.ToShortDateString() + "-";
-                }
-
-                datesStr = datesStr.TrimEnd('-');
-
-                datesStr += "\n";
+            foreach (DateTime date in DatesList)
+            {
+                datesStr += date.ToShortDateString() + "-";
             }
+
+            
 
             return datesStr.TrimEnd('-');
         }
+
     }
 }
