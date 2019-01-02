@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root Type="DevExpress.CodeRush.Foundation.Navigation.Members.MembersNavigationOptions">
+  <Options Language="Neutral">
+    <Items>
+      <Item Id="{0cfafa00-93e9-4fbe-9017-117f1ca9cf11}">
+        <FilterName>C - Class</FilterName>
+      </Item>
+      <Item Id="{1fadb617-b329-4cb1-9a9c-2462df9874a6}">
+        <FilterName>S - Struct</FilterName>
+      </Item>
+      <Item Id="{7e006cd3-b904-4f11-a90a-abe7db6e3626}">
+        <FilterName>I - Interface</FilterName>
+      </Item>
+      <Item Id="{84bb7b94-6009-40c3-bd30-0b6a77dafc18}">
+        <FilterName>E - Enum</FilterName>
+      </Item>
+      <Item Id="{c430d8d2-459d-4191-837d-699c97882537}">
+        <FilterName>D - Delegate</FilterName>
+      </Item>
+      <Item Id="{4878b36e-ea98-426e-ad7e-419b508676ce}">
+        <FilterName>M - Methods</FilterName>
+      </Item>
+      <Item Id="{f2cc5e58-5432-4737-83a7-402f8c70230c}">
+        <FilterName>P - Properties</FilterName>
+      </Item>
+      <Item Id="{622c72ae-d396-4923-b29e-2b13a26c0e6e}">
+        <FilterName>V - Events</FilterName>
+      </Item>
+      <Item Id="{6a0ddc9e-d683-4e69-8af4-b55610a62d12}">
+        <FilterName>F - Fields</FilterName>
+      </Item>
+      <Item Id="{bd290af4-a2d3-4767-babc-53b80660f6ed}">
+        <FilterName>L - Variables</FilterName>
+      </Item>
+      <Item Id="{88191b3f-9db4-486e-89b1-00c54b6b0cae}">
+        <FilterName>B - Public</FilterName>
+      </Item>
+      <Item Id="{e6c2e752-ade1-41dc-aa91-9992706ad7aa}">
+        <FilterName>W - Private</FilterName>
+      </Item>
+      <Item Id="{16be45cb-5850-48c5-902d-837097f60f47}">
+        <FilterName>O - Protected</FilterName>
+      </Item>
+      <Item Id="{d46989ca-a7a5-485f-8ca8-e2028d543e11}">
+        <FilterName>N - Internal/Friend</FilterName>
+      </Item>
+      <Item Id="{a5b1e046-02ab-42e4-8d40-cc1a693ff09a}">
+        <FilterName>T - Protected Internal/Friend</FilterName>
+      </Item>
+    </Items>
+  </Options>
+</Root>
