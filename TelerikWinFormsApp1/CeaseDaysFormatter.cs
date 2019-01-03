@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
 namespace TelerikWinFormsApp1 {
@@ -24,8 +23,13 @@ namespace TelerikWinFormsApp1 {
         }
 
         private void ArrangeDates(DateTimeCollection dates) {
-            IOrderedEnumerable<DateTime> ordered = dates.OrderBy(dt => dt.Month).ThenBy(dt => dt.Day);
-            IOrderedEnumerable<DateTime> orderedByYear = ordered.OrderBy(dt => dt.Year);
+            IOrderedEnumerable<DateTime> ordered = 
+                dates.OrderBy(dt => dt.Month)
+                    .ThenBy(dt => dt.Day);
+
+            IOrderedEnumerable<DateTime> orderedByYear = 
+                ordered.OrderBy(dt => dt.Year);
+
             _groupByMonth = orderedByYear.GroupBy(dt => dt.Month);
         }
 
