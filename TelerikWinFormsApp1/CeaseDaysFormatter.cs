@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Telerik.WinControls.UI;
 
 namespace TelerikWinFormsApp1
@@ -179,7 +178,7 @@ namespace TelerikWinFormsApp1
                 {
                     rangeString += " to ";
                     isRange = false;
-                    // This line is ok.....
+                    
                     rangeString = rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
 
                     rangeString = rangeString.Replace("@", $"{difference - 1}");
@@ -187,7 +186,7 @@ namespace TelerikWinFormsApp1
                     difference = 0;
                 }
 
-                rangeString += $"{list[i]:d},";
+                rangeString += $"{list[i]:d}" + ",";
 
                 if (difference == 0)
                     rangeString += " (@) ";
