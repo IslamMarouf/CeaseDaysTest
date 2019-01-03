@@ -184,9 +184,10 @@ namespace TelerikWinFormsApp1
                     rangeString = rangeString.Replace("@", $"{difference - 1}");
                     rangeCount = 0;
                     difference = 0;
+                    rangeString += $"{list[i]:d}" + ",";
                 }
 
-                rangeString += $"{list[i]:d}" + ",";
+                rangeString += $"{list[i]:dd}" + ",";
 
                 if (difference == 0)
                     rangeString += " (@) ";
