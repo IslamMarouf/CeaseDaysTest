@@ -4,41 +4,34 @@ using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
-namespace TelerikWinFormsApp1
-{
+namespace TelerikWinFormsApp1 {
     //-----------------------------------------------------------------------------------------------
     //	Copyright © 2018 - 2017 Tangible Software Solutions Inc.
     //	Created by Islam Marouf based on the classic VB 'DateDiff' function.
     //
     //	This class arranges and formats the cease days of an employee and displays them as a string.
     //-----------------------------------------------------------------------------------------------
-    public class CeaseDaysFormatter
-    {
+    public class CeaseDaysFormatter {
         public DateTimeCollection Dates { get; set; }
-        private List<DateTime> DatesList;
-
-        public CeaseDaysFormatter() {
-            DatesList = new List<DateTime>();
-        }
+        private readonly List<DateTime> _datesList;
 
         public CeaseDaysFormatter(DateTimeCollection dates) {
             Dates = dates;
+            _datesList = new List<DateTime>();
             ArrangeDates(Dates);
         }
 
         private void ArrangeDates(DateTimeCollection dates) {
-            IOrderedEnumerable<DateTime> ordered = Dates.OrderBy(dt => dt.Month).ThenBy(dt => dt.Day);
+            IOrderedEnumerable<DateTime> ordered = dates.OrderBy(dt => dt.Month).ThenBy(dt => dt.Day);
             IOrderedEnumerable<DateTime> orderedByYear = ordered.OrderBy(dt => dt.Year);
 
 
-            foreach (DateTime date in orderedByYear)
-            {
-                DatesList.Add(date);
+            foreach (DateTime date in orderedByYear) {
+                _datesList.Add(date);
             }
         }
 
-        public enum DateInterval
-        {
+        public enum DateInterval {
             Day,
             DayOfYear,
             Hour,
@@ -100,15 +93,12 @@ namespace TelerikWinFormsApp1
         public override string ToString() {
             string datesStr = string.Empty;
 
-            foreach (DateTime date in DatesList)
-            {
+            foreach (DateTime date in _datesList) {
                 datesStr += date.ToShortDateString() + "-";
             }
 
-            
 
             return datesStr.TrimEnd('-');
         }
-
     }
 }
