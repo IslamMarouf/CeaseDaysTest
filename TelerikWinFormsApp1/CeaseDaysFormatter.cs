@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
@@ -13,6 +14,7 @@ namespace TelerikWinFormsApp1 {
     //-----------------------------------------------------------------------------------------------
     public class CeaseDaysFormatter {
         public DateTimeCollection Dates { get; set; }
+        private IEnumerable<IGrouping<int, DateTime>> _groupByMonth;
         private readonly List<DateTime> _datesList;
 
         public CeaseDaysFormatter(DateTimeCollection dates) {
@@ -24,11 +26,7 @@ namespace TelerikWinFormsApp1 {
         private void ArrangeDates(DateTimeCollection dates) {
             IOrderedEnumerable<DateTime> ordered = dates.OrderBy(dt => dt.Month).ThenBy(dt => dt.Day);
             IOrderedEnumerable<DateTime> orderedByYear = ordered.OrderBy(dt => dt.Year);
-
-
-            foreach (DateTime date in orderedByYear) {
-                _datesList.Add(date);
-            }
+            _groupByMonth = orderedByYear.GroupBy(dt => dt.Month);
         }
 
         public enum DateInterval {
@@ -93,12 +91,80 @@ namespace TelerikWinFormsApp1 {
         public override string ToString() {
             string datesStr = string.Empty;
 
-            foreach (DateTime date in _datesList) {
-                datesStr += date.ToShortDateString() + "-";
+            foreach (var  dates in _groupByMonth)
+            {
+                foreach (DateTime date in dates)
+                {
+                    _datesList.Add(date);
+                }
+
+                // TODO put CeaseDaysAsString() method here.
+
+                datesStr += CeaseDaysAsString(_datesList);
             }
 
 
+
+
             return datesStr.TrimEnd('-');
+        }
+
+        private string CeaseDaysAsString(List<DateTime> list)
+        {
+            // Return fast if list is null or contains less than 2 items
+            if (list == null || !list.Any()) return string.Empty;
+            if (list.Count == 1) return list[0].ToShortDateString();
+
+            var rangeString = new StringBuilder();
+            bool isRange = false;
+            int rangeCount = 0;
+            int difference = 0;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                while (i < list.Count - 1 && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1)
+                {
+                    if (!isRange) rangeString.Append($" # from {list[i]:d/M}");
+                    isRange = true;
+                    rangeCount++;
+                    i++;
+                }
+
+                if (isRange)
+                {
+                    rangeString.Append(" to ");
+                    isRange = false;
+                    // This line is ok.....
+                    rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
+
+                    rangeString.Replace("@", $"{difference - 1}");
+                    rangeCount = 0;
+                    difference = 0;
+                }
+
+                rangeString.Append($"{list[i]:d},");
+
+                if (difference == 0)
+                    rangeString.Append(" (@) ");
+
+                difference++;
+            }
+
+            rangeString.Replace(" (0) ", "");
+            rangeString.Replace(" (@) ", "");
+
+            string temp = rangeString.ToString().TrimEnd(',');
+            temp += $" ({list.Count} days.)";
+
+            return temp; // ... ... 
+        }
+
+        private string DayToken(int n)
+        {
+            if (n == 1)
+                return " day";
+
+            return " days";
         }
     }
 }
