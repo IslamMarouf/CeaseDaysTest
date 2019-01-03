@@ -93,6 +93,7 @@ namespace TelerikWinFormsApp1 {
 
             foreach (var  dates in _groupByMonth)
             {
+                _datesList.Clear();
                 foreach (DateTime date in dates)
                 {
                     _datesList.Add(date);
@@ -102,9 +103,6 @@ namespace TelerikWinFormsApp1 {
 
                 datesStr += CeaseDaysAsString(_datesList);
             }
-
-
-
 
             return datesStr.TrimEnd('-');
         }
@@ -153,10 +151,7 @@ namespace TelerikWinFormsApp1 {
             rangeString.Replace(" (0) ", "");
             rangeString.Replace(" (@) ", "");
 
-            string temp = rangeString.ToString().TrimEnd(',');
-            temp += $" ({list.Count} days.)";
-
-            return temp; // ... ... 
+            return rangeString.ToString().TrimEnd(','); // ... ... 
         }
 
         private string DayToken(int n)
