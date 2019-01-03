@@ -19,5 +19,10 @@ namespace TelerikWinFormsApp1
             _ceaseDays = new CeaseDaysFormatter(radCalendar1.SelectedDates);
             radTextBoxControl1.Text = _ceaseDays.ToString();
         }
+
+        private void radTextBoxControl1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

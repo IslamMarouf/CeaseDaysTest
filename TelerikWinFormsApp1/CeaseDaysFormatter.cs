@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using Telerik.WinControls.UI;
 
-namespace TelerikWinFormsApp1 {
+namespace TelerikWinFormsApp1
+{
     //-----------------------------------------------------------------------------------------------
     //	Copyright © 2018 - 2017 Tangible Software Solutions Inc.
     //	Created by Islam Marouf based on the classic VB 'DateDiff' function.
     //
     //	This class arranges and formats the cease days of an employee and displays them as a string.
     //-----------------------------------------------------------------------------------------------
-    public class CeaseDaysFormatter {
+    public class CeaseDaysFormatter
+    {
         public DateTimeCollection Dates { get; set; }
         private IEnumerable<IGrouping<int, DateTime>> _groupByMonth;
         private readonly List<DateTime> _datesList;
@@ -23,17 +25,18 @@ namespace TelerikWinFormsApp1 {
         }
 
         private void ArrangeDates(DateTimeCollection dates) {
-            IOrderedEnumerable<DateTime> ordered = 
+            IOrderedEnumerable<DateTime> ordered =
                 dates.OrderBy(dt => dt.Month)
                     .ThenBy(dt => dt.Day);
 
-            IOrderedEnumerable<DateTime> orderedByYear = 
+            IOrderedEnumerable<DateTime> orderedByYear =
                 ordered.OrderBy(dt => dt.Year);
 
             _groupByMonth = orderedByYear.GroupBy(dt => dt.Month);
         }
 
-        public enum DateInterval {
+        public enum DateInterval
+        {
             Day,
             DayOfYear,
             Hour,
@@ -95,21 +98,61 @@ namespace TelerikWinFormsApp1 {
         public override string ToString() {
             string datesStr = string.Empty;
 
-            foreach (var  dates in _groupByMonth)
-            {
+            foreach (var dates in _groupByMonth) {
                 _datesList.Clear();
-                foreach (DateTime date in dates)
-                {
+                foreach (DateTime date in dates) {
                     _datesList.Add(date);
                 }
 
                 // TODO put CeaseDaysAsString() method here.
-
                 datesStr += CeaseDaysAsString(_datesList);
             }
 
-            return datesStr.TrimEnd('-');
+            return datesStr.TrimEnd(',');
         }
+
+        /*        private string CeaseDaysAsString(List<DateTime> list) {
+                    // Return fast if list is null or contains less than 2 items
+                    if (list == null || !list.Any()) return string.Empty;
+                    if (list.Count == 1) return list[0].ToShortDateString();
+
+                    var rangeString = new StringBuilder();
+                    bool isRange = false;
+                    int rangeCount = 0;
+                    int difference = 0;
+
+                    for (int i = 0; i < list.Count; i++) {
+                        while (i < list.Count - 1 && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1) {
+                            if (!isRange) rangeString.Append($" # from {list[i]:d/M}");
+                            isRange = true;
+                            rangeCount++;
+                            i++;
+                        }
+
+                        if (isRange) {
+                            rangeString.Append(" to ");
+                            isRange = false;
+                            // This line is ok.....
+                            rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
+
+                            rangeString.Replace("@", $"{difference - 1}");
+                            rangeCount = 0;
+                            difference = 0;
+                        }
+
+                        rangeString.Append($"{list[i]:d},");
+
+                        if (difference == 0)
+                            rangeString.Append(" (@) ");
+
+                        difference++;
+                    }
+
+                    rangeString.Replace(" (0) ", "");
+                    rangeString.Replace(" (@) ", "");
+
+                    return rangeString.ToString(); // ... ... 
+                } */
 
         private string CeaseDaysAsString(List<DateTime> list)
         {
@@ -117,7 +160,7 @@ namespace TelerikWinFormsApp1 {
             if (list == null || !list.Any()) return string.Empty;
             if (list.Count == 1) return list[0].ToShortDateString();
 
-            var rangeString = new StringBuilder();
+            string rangeString = string.Empty;
             bool isRange = false;
             int rangeCount = 0;
             int difference = 0;
@@ -126,7 +169,7 @@ namespace TelerikWinFormsApp1 {
             {
                 while (i < list.Count - 1 && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1)
                 {
-                    if (!isRange) rangeString.Append($" # from {list[i]:d/M}");
+                    if (!isRange) rangeString += $" # from {list[i]:d/M}";
                     isRange = true;
                     rangeCount++;
                     i++;
@@ -134,32 +177,31 @@ namespace TelerikWinFormsApp1 {
 
                 if (isRange)
                 {
-                    rangeString.Append(" to ");
+                    rangeString += " to ";
                     isRange = false;
                     // This line is ok.....
-                    rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
+                    rangeString = rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
 
-                    rangeString.Replace("@", $"{difference - 1}");
+                    rangeString = rangeString.Replace("@", $"{difference - 1}");
                     rangeCount = 0;
                     difference = 0;
                 }
 
-                rangeString.Append($"{list[i]:d},");
+                rangeString += $"{list[i]:d},";
 
                 if (difference == 0)
-                    rangeString.Append(" (@) ");
+                    rangeString += " (@) ";
 
                 difference++;
             }
 
-            rangeString.Replace(" (0) ", "");
-            rangeString.Replace(" (@) ", "");
+            rangeString = rangeString.Replace(" (0) ", "");
+            rangeString = rangeString.Replace(" (@) ", "");
 
-            return rangeString.ToString().TrimEnd(','); // ... ... 
+            return rangeString; // ... ... 
         }
 
-        private string DayToken(int n)
-        {
+        private string DayToken(int n) {
             if (n == 1)
                 return " day";
 
