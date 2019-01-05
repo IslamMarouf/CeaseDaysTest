@@ -162,12 +162,12 @@ namespace TelerikWinFormsApp1
             string rangeString = string.Empty;
             bool isRange = false;
             int rangeCount = 0;
-            int difference = 0;
             List<DateTime> dList = new List<DateTime>();
 
             for (int i = 0; i < list.Count; i++)
             {
-                while (i < list.Count - 1 && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1)
+                while (i < list.Count - 1 
+                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1)
                 {
                     if (!isRange) rangeString += $" # from {list[i]:d/M}";
                     isRange = true;
@@ -181,10 +181,7 @@ namespace TelerikWinFormsApp1
                     isRange = false;
                     
                     rangeString = rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
-
-                    rangeString = rangeString.Replace("@", $"{difference - 1}");
                     rangeCount = 0;
-                    difference = 0;
                     rangeString += $"{list[i]:d}" + ",";
                     
                     i++;
@@ -192,7 +189,8 @@ namespace TelerikWinFormsApp1
 
                 dList.Clear();
 
-                while (i < list.Count - 1 && DateDiff(DateInterval.Day, list[i], list[i + 1]) != 1)
+                while (i < list.Count - 1 
+                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) != 1)
                 {
                     dList.Add(list[i]);
                     i++;
@@ -214,12 +212,8 @@ namespace TelerikWinFormsApp1
                     }
 
                     i--;
-                }
-                
+                }             
             }
-
-            //rangeString = rangeString.Replace(" (0) ", "");
-            //rangeString = rangeString.Replace(" (@) ", "");
 
             return rangeString; // ... ... 
         }
