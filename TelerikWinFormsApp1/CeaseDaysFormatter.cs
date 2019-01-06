@@ -6,9 +6,9 @@ using Telerik.WinControls.UI;
 namespace TelerikWinFormsApp1
 {
     //-----------------------------------------------------------------------------------------------
-    //	Copyright © 2018 - 2017 Tangible Software Solutions Inc.
+    //	Copyright © 2018
     //	Created by Islam Marouf based on the classic VB 'DateDiff' function.
-    //
+    //  with some enhamcements.
     //	This class arranges and formats the cease days of an employee and displays them as a string.
     //-----------------------------------------------------------------------------------------------
     public class CeaseDaysFormatter
