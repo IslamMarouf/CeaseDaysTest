@@ -196,22 +196,24 @@ namespace TelerikWinFormsApp1
                     i++;
                 }
 
-                if (dList.Count == 1) {
-                    rangeString += $"({dList.Count}) ";
-                    rangeString += dList[0].ToShortDateString() + ",";
-                }
-                else {
-                    rangeString += $"({dList.Count}) ";
-                    foreach (var d in dList) {                       
-                        if (d == dList.Last()) {
-                            rangeString += d.ToShortDateString() + ",";
-                        }
-                        else {
-                            rangeString += d.Day + ",";
-                        }
+                if (dList.Count != 0) {
+                    if (dList.Count == 1) {
+                        rangeString += $"({dList.Count}) ";
+                        rangeString += dList[0].ToShortDateString() + ",";
                     }
+                    else {
+                        rangeString += $"({dList.Count}) ";
+                        foreach (var d in dList) {                       
+                            if (d == dList.Last()) {
+                                rangeString += d.ToShortDateString() + ",";
+                            }
+                            else {
+                                rangeString += d.Day + ",";
+                            }
+                        }
 
-                    i--;
+                        i--;
+                    }
                 }             
             }
 
