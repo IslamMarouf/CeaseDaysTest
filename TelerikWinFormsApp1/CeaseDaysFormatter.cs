@@ -110,49 +110,6 @@ namespace TelerikWinFormsApp1
             return datesStr.TrimEnd(',');
         }
 
-        /*        private string CeaseDaysAsString(List<DateTime> list) {
-                    // Return fast if list is null or contains less than 2 items
-                    if (list == null || !list.Any()) return string.Empty;
-                    if (list.Count == 1) return list[0].ToShortDateString();
-
-                    var rangeString = new StringBuilder();
-                    bool isRange = false;
-                    int rangeCount = 0;
-                    int difference = 0;
-
-                    for (int i = 0; i < list.Count; i++) {
-                        while (i < list.Count - 1 && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1) {
-                            if (!isRange) rangeString.Append($" # from {list[i]:d/M}");
-                            isRange = true;
-                            rangeCount++;
-                            i++;
-                        }
-
-                        if (isRange) {
-                            rangeString.Append(" to ");
-                            isRange = false;
-                            // This line is ok.....
-                            rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
-
-                            rangeString.Replace("@", $"{difference - 1}");
-                            rangeCount = 0;
-                            difference = 0;
-                        }
-
-                        rangeString.Append($"{list[i]:d},");
-
-                        if (difference == 0)
-                            rangeString.Append(" (@) ");
-
-                        difference++;
-                    }
-
-                    rangeString.Replace(" (0) ", "");
-                    rangeString.Replace(" (@) ", "");
-
-                    return rangeString.ToString(); // ... ... 
-                } */
-
         private string CeaseDaysAsString(List<DateTime> list)
         {
             // Return fast if list is null or contains less than 2 items
@@ -198,7 +155,7 @@ namespace TelerikWinFormsApp1
 
                 if (dList.Count != 0) {
                     if (dList.Count == 1) {
-                        rangeString += $"({dList.Count}) ";
+                        rangeString += $" and ({dList.Count}) ";
                         rangeString += dList[0].ToShortDateString() + ",";
                     }
                     else {
@@ -211,7 +168,6 @@ namespace TelerikWinFormsApp1
                                 rangeString += d.Day + ",";
                             }
                         }
-
                         i--;
                     }
                 }             
