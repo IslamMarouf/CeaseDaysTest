@@ -141,6 +141,7 @@ namespace TelerikWinFormsApp1
                     rangeCount = 0;
                     rangeString += $"{list[i]:d}" + ",";
                     
+                    // Maintaining this
                     i++;
                 }
 
