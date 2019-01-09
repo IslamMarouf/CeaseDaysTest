@@ -172,8 +172,6 @@ namespace TelerikWinFormsApp1
 
                         //i--;
                     }
-
-
                     
                 }
 
