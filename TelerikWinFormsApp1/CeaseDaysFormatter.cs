@@ -156,11 +156,11 @@ namespace TelerikWinFormsApp1
 
                 if (dList.Count != 0) {
                     if (dList.Count == 1) {
-                        rangeString += $" ({dList.Count}) ";
+                        rangeString += $" n ({dList.Count}) ";
                         rangeString += dList[0].ToShortDateString() + ",";
                     }
                     else {
-                        rangeString += $"({dList.Count}) ";
+                        rangeString += $" ({dList.Count}) ";
                         foreach (var d in dList) {                       
                             if (d == dList.Last()) {
                                 rangeString += d.ToShortDateString() + ",";
