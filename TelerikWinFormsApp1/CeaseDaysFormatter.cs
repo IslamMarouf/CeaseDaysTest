@@ -110,8 +110,7 @@ namespace TelerikWinFormsApp1
             return datesStr.TrimEnd(',');
         }
 
-        private string CeaseDaysAsString(List<DateTime> list)
-        {
+        private string CeaseDaysAsString(List<DateTime> list) {
             // Return fast if list is null or contains less than 2 items
             if (list == null || !list.Any()) return string.Empty;
             if (list.Count == 1) return list[0].ToShortDateString();
@@ -121,47 +120,48 @@ namespace TelerikWinFormsApp1
             int rangeCount = 0;
             List<DateTime> dList = new List<DateTime>();
 
-            for (int i = 0; i < list.Count; i++)
-            {
-                while (i < list.Count - 1 
-                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1)
-                {
+            for (int i = 0; i < list.Count; i++) {
+                while (i < list.Count - 1
+                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1) {
                     if (!isRange) rangeString += $" # from {list[i]:d/M}";
                     isRange = true;
                     rangeCount++;
                     i++;
                 }
 
-                if (isRange)
-                {
+                if (isRange) {
                     rangeString += " to ";
                     isRange = false;
-                    
+
                     rangeString = rangeString.Replace("#", $"{rangeCount + 1}" + DayToken(rangeCount + 1));
                     rangeCount = 0;
                     rangeString += $"{list[i]:d}" + ",";
-                    
+
                     // to prevent  the repeatation of the last element of the consecutive dates.
                     i++;
                 }
 
                 dList.Clear();
 
-                while (i < list.Count - 1 
-                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) != 1)
-                {
+                while (i < list.Count - 1
+                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) != 1) {
                     dList.Add(list[i]);
                     i++;
                 }
 
+                
+
                 if (dList.Count != 0) {
+
+                    dList.Add(list[i]);
+
                     if (dList.Count == 1) {
-                        rangeString += $" n ({dList.Count}) ";
+                        rangeString += $" ({dList.Count}) ";
                         rangeString += dList[0].ToShortDateString() + ",";
                     }
                     else {
                         rangeString += $" ({dList.Count}) ";
-                        foreach (var d in dList) {                       
+                        foreach (var d in dList) {
                             if (d == dList.Last()) {
                                 rangeString += d.ToShortDateString() + ",";
                             }
@@ -169,14 +169,16 @@ namespace TelerikWinFormsApp1
                                 rangeString += d.Day + ",";
                             }
                         }
-                        i--;
+
+                        //i--;
                     }
+
+
+                    
                 }
 
-                if (i != list.Count - 1) {
+                if (i != list.Count - 1)
                     i--;
-                }
-                
             }
 
             return rangeString; // ... ... 
