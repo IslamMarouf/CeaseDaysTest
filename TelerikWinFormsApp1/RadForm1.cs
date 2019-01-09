@@ -24,5 +24,16 @@ namespace TelerikWinFormsApp1
         {
 
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e) {
+            radCalendar1.SelectedDates.Clear();
+            
+            radTextBoxControl1.Clear();
+        }
     }
 }

@@ -141,7 +141,7 @@ namespace TelerikWinFormsApp1
                     rangeCount = 0;
                     rangeString += $"{list[i]:d}" + ",";
                     
-                    // Maintaining this
+                    // to prevent  the repeatation of the last element of the consecutive dates.
                     i++;
                 }
 
@@ -156,7 +156,7 @@ namespace TelerikWinFormsApp1
 
                 if (dList.Count != 0) {
                     if (dList.Count == 1) {
-                        rangeString += $" and ({dList.Count}) ";
+                        rangeString += $" ({dList.Count}) ";
                         rangeString += dList[0].ToShortDateString() + ",";
                     }
                     else {
@@ -171,7 +171,12 @@ namespace TelerikWinFormsApp1
                         }
                         i--;
                     }
-                }             
+                }
+
+                if (i != list.Count - 1) {
+                    i--;
+                }
+                
             }
 
             return rangeString; // ... ... 

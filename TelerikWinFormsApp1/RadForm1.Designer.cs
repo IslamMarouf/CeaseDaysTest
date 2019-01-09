@@ -31,9 +31,13 @@
             this.radCalendar1 = new Telerik.WinControls.UI.RadCalendar();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radTextBoxControl1 = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.btnOK = new Telerik.WinControls.UI.RadButton();
+            this.btnClear = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +53,7 @@
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(12, 245);
+            this.radButton1.Location = new System.Drawing.Point(129, 246);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(110, 24);
             this.radButton1.TabIndex = 2;
@@ -68,11 +72,31 @@
             this.radTextBoxControl1.TabIndex = 3;
             this.radTextBoxControl1.TextChanged += new System.EventHandler(this.radTextBoxControl1_TextChanged);
             // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(13, 246);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(110, 24);
+            this.btnOK.TabIndex = 4;
+            this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(245, 246);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(110, 24);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // RadForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 275);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.radTextBoxControl1);
             this.Controls.Add(this.radButton1);
             this.Controls.Add(this.radCalendar1);
@@ -87,6 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -97,5 +123,7 @@
         private Telerik.WinControls.UI.RadCalendar radCalendar1;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadTextBoxControl radTextBoxControl1;
+        private Telerik.WinControls.UI.RadButton btnOK;
+        private Telerik.WinControls.UI.RadButton btnClear;
     }
 }
