@@ -18,8 +18,8 @@ namespace TelerikWinFormsApp1
         private void radButton1_Click(object sender, EventArgs e) {
             radCalendar1.Text = "";
             _ceaseDays = new CeaseDaysFormatter(radCalendar1.SelectedDates);
-            radTextBoxControl1.Text = _ceaseDays.GetMonthsAsString();
-            
+            radTextBoxControl1.Text = _ceaseDays.ToString();
+
         }
 
         private void btnOK_Click(object sender, EventArgs e) {
