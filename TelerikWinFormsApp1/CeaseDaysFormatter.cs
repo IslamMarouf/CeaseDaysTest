@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
 namespace TelerikWinFormsApp1
@@ -13,14 +14,35 @@ namespace TelerikWinFormsApp1
     //-----------------------------------------------------------------------------------------------
     public class CeaseDaysFormatter
     {
-        public DateTimeCollection Dates { get; set; }
+        private DateTimeCollection Dates { get; set; }
         private IEnumerable<IGrouping<int, DateTime>> _groupByMonth;
         private readonly List<DateTime> _datesList;
+        public int MonthsCount;
+
 
         public CeaseDaysFormatter(DateTimeCollection dates) {
             Dates = dates;
             _datesList = new List<DateTime>();
             ArrangeDates(Dates);
+            GetMonthsAsString();
+        }
+
+        public string GetMonthsAsString() {
+            string monthsStr = string.Empty;
+
+            List<string> months = Dates.Select(d => d.Date.ToString("MMMM"))
+                .Distinct()
+                .ToList();
+
+            MonthsCount = months.Count;
+
+            monthsStr += MonthToken(MonthsCount) + " ";
+
+            foreach (var element in months) {
+                monthsStr += element + ",";
+            }
+
+            return monthsStr;
         }
 
         private void ArrangeDates(DateTimeCollection dates) {
@@ -147,9 +169,7 @@ namespace TelerikWinFormsApp1
                        && DateDiff(DateInterval.Day, list[i], list[i + 1]) != 1) {
                     dList.Add(list[i]);
                     i++;
-                }
-
-                
+                }          
 
                 if (dList.Count != 0) {
 
@@ -187,6 +207,14 @@ namespace TelerikWinFormsApp1
                 return " day";
 
             return " days";
+        }
+
+        private string MonthToken(int n)
+        {
+            if (n == 1)
+                return " month";
+
+            return " months";
         }
     }
 }

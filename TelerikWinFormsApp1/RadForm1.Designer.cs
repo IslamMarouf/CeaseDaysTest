@@ -57,7 +57,7 @@
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(110, 24);
             this.radButton1.TabIndex = 2;
-            this.radButton1.Text = "Display Dates";
+            this.radButton1.Text = "معاينة";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // radTextBoxControl1
@@ -70,7 +70,6 @@
             this.radTextBoxControl1.Name = "radTextBoxControl1";
             this.radTextBoxControl1.Size = new System.Drawing.Size(422, 227);
             this.radTextBoxControl1.TabIndex = 3;
-            this.radTextBoxControl1.TextChanged += new System.EventHandler(this.radTextBoxControl1_TextChanged);
             // 
             // btnOK
             // 
@@ -78,7 +77,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(110, 24);
             this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "موافق";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnClear
@@ -87,13 +86,14 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(110, 24);
             this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "مسح";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // RadForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(709, 275);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnOK);
@@ -106,7 +106,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Display Dates";
+            this.Text = "ايام الانقطاع";
             this.Load += new System.EventHandler(this.RadForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
