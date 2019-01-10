@@ -53,9 +53,9 @@
             // 
             // radButton1
             // 
-            this.radButton1.Location = new System.Drawing.Point(129, 246);
+            this.radButton1.Location = new System.Drawing.Point(82, 246);
             this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(110, 24);
+            this.radButton1.Size = new System.Drawing.Size(61, 24);
             this.radButton1.TabIndex = 2;
             this.radButton1.Text = "معاينة";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
@@ -75,16 +75,16 @@
             // 
             this.btnOK.Location = new System.Drawing.Point(13, 246);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(110, 24);
+            this.btnOK.Size = new System.Drawing.Size(61, 24);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "موافق";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(245, 246);
+            this.btnClear.Location = new System.Drawing.Point(149, 246);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(110, 24);
+            this.btnClear.Size = new System.Drawing.Size(61, 24);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "مسح";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -96,9 +96,9 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(709, 275);
             this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.radButton1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.radTextBoxControl1);
-            this.Controls.Add(this.radButton1);
             this.Controls.Add(this.radCalendar1);
             this.Name = "RadForm1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
