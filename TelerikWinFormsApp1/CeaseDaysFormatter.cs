@@ -17,7 +17,7 @@ namespace TelerikWinFormsApp1
         private DateTimeCollection Dates { get; set; }
         private IEnumerable<IGrouping<int, DateTime>> _groupByMonth;
         private readonly List<DateTime> _datesList;
-        public int MonthsCount;
+        private int _monthsCount;
 
 
         public CeaseDaysFormatter(DateTimeCollection dates) {
@@ -34,9 +34,9 @@ namespace TelerikWinFormsApp1
                 .Distinct()
                 .ToList();
 
-            MonthsCount = months.Count;
+            _monthsCount = months.Count;
 
-            monthsStr += MonthToken(MonthsCount) + " ";
+            monthsStr += MonthToken(_monthsCount) + " ";
 
             foreach (var element in months) {
                 monthsStr += element + ",";
