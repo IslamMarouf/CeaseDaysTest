@@ -131,7 +131,7 @@ namespace TelerikWinFormsApp1
             return datesStr.TrimEnd(',');
         }
 
-        private string CeaseDaysAsString(List<DateTime> list) {
+        /*private string CeaseDaysAsString(List<DateTime> list) {
             // Return fast if list is null or contains less than 2 items
             if (list == null || !list.Any()) return string.Empty;
             if (list.Count == 1) return list[0].ToShortDateString();
@@ -192,6 +192,93 @@ namespace TelerikWinFormsApp1
                         //i--;
                     }
                     
+                }
+
+                if (i != list.Count - 1)
+                    i--;
+            }
+
+            return rangeString; // ... ... 
+        } */
+
+        private string CeaseDaysAsString(List<DateTime> list)
+        {
+            // Return fast if list is null or contains less than 2 items
+            if (list == null || !list.Any()) return string.Empty;
+            if (list.Count == 1) return list[0].ToShortDateString();
+
+            string rangeString = string.Empty;
+            bool isRange = false;
+            int rangeCount = 0;
+            List<DateTime> dList = new List<DateTime>();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                dList.Clear();
+
+                while (i < list.Count - 1
+                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) == 1)
+                {
+                    dList.Add(list[i]);
+                    i++;
+                }
+
+                if (dList.Count != 0)
+                {
+
+                    dList.Add(list[i]);
+
+                    if (dList.Count == 1)
+                    {
+                        rangeString += dList[0].ToShortDateString() + ",";
+                    }
+                    else
+                    {
+                        rangeString += $" ({dList.Count} from ";
+                        rangeString += $"{dList.First():d/M} to {dList.Last().ToShortDateString()}";
+                    }
+
+                }
+
+                // ----------------------------------------------------------------------------
+
+                dList.Clear();
+
+                while (i < list.Count - 1
+                       && DateDiff(DateInterval.Day, list[i], list[i + 1]) != 1)
+                {
+                    dList.Add(list[i]);
+                    i++;
+                }
+
+                if (dList.Count != 0)
+                {
+
+                    dList.Add(list[i]);
+
+                    if (dList.Count == 1)
+                    {
+                        rangeString += $" ({dList.Count}) ";
+                        rangeString += dList[0].ToShortDateString() + ",";
+                    }
+                    else
+                    {
+                        rangeString += $" ({dList.Count}) ";
+                        foreach (var d in dList)
+                        {
+                            if (d == dList.Last())
+                            {
+                                rangeString += d.ToShortDateString() + ",";
+                            }
+                            else
+                            {
+                                rangeString += d.Day + ",";
+                            }
+                        }
+
+                        //i--;
+                    }
+
                 }
 
                 if (i != list.Count - 1)
