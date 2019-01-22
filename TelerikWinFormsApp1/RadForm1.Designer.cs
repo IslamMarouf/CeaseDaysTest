@@ -50,6 +50,7 @@
             this.radCalendar1.Name = "radCalendar1";
             this.radCalendar1.Size = new System.Drawing.Size(257, 227);
             this.radCalendar1.TabIndex = 0;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radCalendar1.GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1))).Shape = null;
             // 
             // radButton1
             // 
@@ -91,6 +92,7 @@
             // 
             // RadForm1
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -100,12 +102,14 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.radTextBoxControl1);
             this.Controls.Add(this.radCalendar1);
+            this.MaximizeBox = false;
             this.Name = "RadForm1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ايام الانقطاع";
             this.Load += new System.EventHandler(this.RadForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).EndInit();

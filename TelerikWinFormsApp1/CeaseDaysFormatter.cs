@@ -279,6 +279,7 @@ namespace TelerikWinFormsApp1
                         //i--;
                     }
 
+                    //i++;
                 }
 
                 if (i != list.Count - 1)
