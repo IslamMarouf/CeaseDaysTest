@@ -6293,12 +6293,34 @@
             Gets or sets value indicating whether top right corner of the shape should be round
             </summary>
         </member>
+        <member name="T:Telerik.WinControls.UI.TabEdgeShape">
+            <summary>
+            Represents Edge-like tab shape. Shapes are series of connected lines.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.TabEdgeShape.CreatePath(System.Drawing.Rectangle)">
+            <summary>
+            Creates Edge like tab shape. Overrides CreatePath method in the base class
+            ElementShape.
+            </summary>
+        </member>
         <member name="T:Telerik.WinControls.UI.TabIEShape">
             <summary>Represents IE like tab shape. Shapes are series of connected lines and curves.</summary>
         </member>
         <member name="M:Telerik.WinControls.UI.TabIEShape.CreatePath(System.Drawing.Rectangle)">
             <summary>
             Creates IE like tab shape. Overrides CreatePath method in the base class
+            ElementShape.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.TabItemShape">
+            <summary>
+            Represents IE-like tab shape used by the RadTabbedForm. Shapes are series of connected lines and curves.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.TabItemShape.CreatePath(System.Drawing.Rectangle)">
+            <summary>
+            Creates the default shape used by the RadTabbedFormControl. Overrides CreatePath method in the base class
             ElementShape.
             </summary>
         </member>

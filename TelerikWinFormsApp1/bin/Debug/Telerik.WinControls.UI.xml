@@ -8098,6 +8098,11 @@
             Represents a TimePicker editor.
             </summary> 
         </member>
+        <member name="T:Telerik.WinControls.UI.BaseTimeSpanPickerEditor">
+            <summary>
+            Represents a TimeSpan editor.
+            </summary> 
+        </member>
         <member name="T:Telerik.WinControls.UI.PopupManager">
             <summary>
             This class manages all opened popups per UI thread.
@@ -8588,6 +8593,658 @@
         <member name="T:Telerik.WinControls.UI.RadTextBoxEditorElement">
             <summary>
             Represents a textbox editor element used in RadTextBoxEditor
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.MaskTimeSpanProvider.ToString(System.TimeSpan,System.Collections.Generic.IList{Telerik.WinControls.UI.TimeSpanMaskPart},System.Globalization.CultureInfo)">
+            <summary>
+            Returns a formatted TimeSpan string based on the list of <see cref="T:Telerik.WinControls.UI.TimeSpanMaskPart"/>.
+            </summary>
+            <param name="value">TimeSpan value.</param>
+            <param name="maskParts">List of TimeSpanMaskPart structs, who define the format of TimeSpan value.</param>
+            <param name="culture">The culture used to format the string when value is negative.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.MaskTimeSpanProvider.ToString(System.TimeSpan,System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Returns a formatted TimeSpan string based on the given format string.
+            </summary>
+            <param name="value">TimeSpan value.</param>
+            <param name="format">Format string.</param>
+            <param name="culture">The culture used to format the string when value is negative.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.MaskTimeSpanProvider.EnableKeyNavigation">
+            <summary>
+            Enable or Disable the selection of the next or previous part of the date with arrow keys
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.MaskTimeSpanProvider.DaysStep">
+            <summary>
+            Gets or sets the days step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.MaskTimeSpanProvider.HoursStep">
+            <summary>
+            Gets or sets the hours step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.MaskTimeSpanProvider.MinutesStep">
+            <summary>
+            Gets or sets the minutes step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.MaskTimeSpanProvider.SecondsStep">
+            <summary>
+            Gets or sets the seconds step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.MaskTimeSpanProvider.MillisecondsStep">
+            <summary>
+            Gets or sets the milliseconds step used when modifying the value.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTextBox">
+            <exclude/>
+            <summary>
+                Represents a RadTextBox. The RadTextBox control serves as a simple wrapper for
+                <see cref="T:Telerik.WinControls.UI.RadTextBoxElement">RadTextBoxElement class</see> which in turn wraps
+                <see cref="T:Telerik.WinControls.UI.RadTextBoxItem">RadTextBoxItem Class</see>. All logic and presentation
+                features are implemented in a parallel hierarchy of objects. For this reason,
+                <see cref="T:Telerik.WinControls.UI.RadTextBoxElement">RadTextBoxElement class</see> may be nested in any
+                other telerik control, item, or element. RadTextBox acts to transfer events to and
+                from its corresponding instance of the
+                <see cref="T:Telerik.WinControls.UI.RadTextBoxElement">RadTextBoxElement class</see>.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.#cctor">
+            <summary>
+            Initializes a new instance of the RadTextBoxBase class.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.#ctor">
+            <summary>
+            Represents RadTextBoxBase constructor
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.InitializeTextElement">
+            <summary>
+            Initializes textbox's children
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.AppendText(System.String)">
+            <summary>
+            Appends text to the current text.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Clear">
+            <summary>
+            Empties the TextBox.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.ClearUndo">
+            <summary>
+            Undo to the previous text value before clear invocation.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Copy">
+            <summary>
+            Copies the text value to the clipboard.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Cut">
+            <summary>
+            Cuts the text value to the clipboard.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.DeselectAll">
+            <summary>
+            <para>Deselects the text in the cotrol.</para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetCharFromPosition(System.Drawing.Point)">
+            <summary>
+            Retrieves the character that is closest to the specified location within the
+            control.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetCharIndexFromPosition(System.Drawing.Point)">
+            <summary>
+            Retrieves the index of the character nearest to the specified location.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetFirstCharIndexFromLine(System.Int32)">
+            <summary>
+            Retrieves the index of the first character of a given line.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetFirstCharIndexOfCurrentLine">
+            <summary>
+            	<para>Retrieves the index of the first character of the current line. This method
+                is not supported by MaskedTextBox.</para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetLineFromCharIndex(System.Int32)">
+            <summary>
+            	<para>Retrieves the line number from the specified character position within the
+                text of the control.</para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetPositionFromCharIndex(System.Int32)">
+            <summary>
+            	<para>Retrieves the location within the control at the specified character
+                index.</para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Paste">
+            <summary>
+            Pastes the text value to the clipboard.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Paste(System.String)">
+            <summary>
+            Pastes the string parameter to the clipboard.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.ScrollToCaret">
+            <summary>
+            Scrolls the contents of the control to the current caret position.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Select(System.Int32,System.Int32)">
+            <summary>
+            Selects the text in the TextBox from the start position inclusive to the end
+            position exclusive.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.SelectAll">
+            <summary>
+            Selects the text in the TextBox.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Undo">
+            <summary>
+            Undoes the last edit operation in the text box.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Focus">
+            <summary>
+            Sets input focus to the control.
+            </summary>
+            <returns>true if the input focus request was successful; otherwise, false.
+            </returns>		
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Select">
+            <summary>
+            Activates the control.
+            </summary>		
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnAcceptsTabChanged(System.EventArgs)">
+            <summary>
+            Raises the AcceptsTabChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnHideSelectionChanged(System.EventArgs)">
+            <summary>
+            Raises the HideSelectionChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnModifiedChanged(System.EventArgs)">
+            <summary>
+            Raises the ModifiedChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnMultilineChanged(System.EventArgs)">
+            <summary>
+            Raises the MultilineChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnReadOnlyChanged(System.EventArgs)">
+            <summary>
+            Raises the ReadOnlyChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnTextAlignChanged(System.EventArgs)">
+            <summary>
+            Raises the TextAlignChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnTextChanging(Telerik.WinControls.TextChangingEventArgs)">
+            <summary>
+            Raises the TextChanging event.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.AutoSize">
+            <summary>
+            Gets or sets whether the edit control is auto-sized
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Text">
+            <summary>Gets or sets the displayed text.</summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Font">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl03_LabelAbstract">Gets or sets
+            the font of the text displayed by the control.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.AcceptsReturn">
+            <summary>
+            Gets or sets a value indicating whether pressing ENTER in a multiline RadTextBox
+            control creates a new line of text in the control or activates the default button for
+            the form.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.AcceptsTab">
+            <summary>
+            Gets or sets a value indicating whether pressing the TAB key in a multiline text
+            box control types a TAB character in the control instead of moving the focus to the
+            next control in the tab order.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.CanUndo">
+            <summary>Gets value indicating whether undo is allowed.</summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.CharacterCasing">
+            <summary>
+            	<para>Gets or sets a value indicating whether the RadTextBox control modifies the
+                case of characters as they are typed.</para>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.HideSelection">
+            <summary>
+            	<para>Gets or sets a value indicating whether the selected text remains highlighted
+                even when the RadTextBox has lost the focus.</para>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Lines">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            the lines of text in multiline configurations.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.MaxLength">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            the maximum number of characters allowed in the text box.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Modified">
+            <summary>
+            Gets or sets a value indicating whether the RadTextBox control has been modified
+            by the user since the control was created or since its contents were last set.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Multiline">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            a value indicating whether this is a multiline TextBox control.</span>
+            When the value is true, the AutoSize property is automatically changed to false and the user needs to take care of the height of this control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.NullText">
+            <summary>
+            Gets or sets the text that is displayed when the ComboBox contains a null 
+            reference. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ShowNullText">
+            <summary>
+            Gets or sets a value indicating whether the null text will be shown when the control is focused and the text is empty.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.PasswordChar">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            the character used to mask characters of a password in a single-line TextBox
+            control.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ReadOnly">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            a value indicating whether the contents of the TextBox control can be
+            changed.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ScrollBars">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            which scroll bars should appear in a multiline TextBox control.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.SelectedText">
+            <summary>
+            Gets or sets a value indicating the currently selected text in the
+            control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.SelectionLength">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            the number of characters selected in the text box.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.SelectionStart">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            the starting point of text selected in the text box.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ShortcutsEnabled">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
+            a value indicating whether the defined shortcuts are enabled.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.TextAlign">
+            <summary>Gets or sets how text is aligned in a TextBox control.</summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.TextLength">
+            <summary>Gets the length of the text in the control.</summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.WordWrap">
+            <summary>
+            	<para>Gets or sets a value indicating whether a multiline text box control
+                automatically wraps words to the beginning of the next line when necessary.</para>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.AcceptsTabChanged">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
+            the value of the AcceptsTab property has changed.</span>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.HideSelectionChanged">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
+            the value of the HideSelection property changes.</span>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.ModifiedChanged">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
+            the value of the Modified property has changed.</span>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.MultilineChanged">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl02_LabelAbstract">Occurs when
+            the value of the Multiline property has changed.</span>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.ReadOnlyChanged">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
+            the ReadOnly property changes.</span>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.TextAlignChanged">
+            <summary>
+            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl03_LabelAbstract">Occurs when
+            the value of the TextAlign property has changed.</span>
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.TextChanging">
+            <summary>
+            	<para><span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl03_LabelAbstract">Occurs
+                when text is being changed.</span></para>
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBox.#ctor">
+            <summary>
+            Represents RadTextBox's constructor
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTextBox.InitializeTextElement">
+            <summary>
+            Initializes textbox's children
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBox.TextBoxElement">
+            <summary>
+            Gets the instance of RadTextBoxElement wrapped by this control. RadTextBoxElement
+            is the main element in the hierarchy tree and encapsulates the actual functionality of RadTextBox.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBox.UseGenericBorderPaint">
+            <summary>
+            Gets or sets a value indicating whether to show the bottom part of characters, clipped 
+            due to font name or size particularities
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBox.UseSystemPasswordChar">
+            <summary>
+            Gets or sets a value indicating whether the text should appear as the default password character.
+            </summary>
+            <value>
+            <c>true</c> if the text otherwise hould appear as the default password character; <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBox.ShowClearButton">
+            <summary>
+            Gets or sets a value indicating whether the clear button is shown.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBox.CausesValidation">
+            <summary>
+            Gets or sets a value indicating whether the control causes validation to be
+            performed on any controls that require validation when it receives focus.
+            </summary>
+            <value>
+            true if the control causes validation to be performed on any controls requiring
+            validation when it receives focus; otherwise, false.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBox.RightButtonItems">
+            <summary>
+            Returns the collection of buttons that appears on the right side of the text. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBox.LeftButtonItems">
+            <summary>
+            Returns the collection of buttons that appears on the left side of the text. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBox.ShowTextBox">
+            <summary>
+            Shows/hides the inner text box.
+            </summary>      
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBox.DefaultElementsSpacing">
+            <summary>
+            Gets or set the default space between the elements. 
+            </summary>  
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadButtonTextBox.ItemClicked">
+            <summary>
+            Fires when an item is clicked.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBoxElement.DefaultElementSpacing">
+            <summary>
+            Gets or set the default space between the elements. 
+            </summary>     
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBoxElement.RightButtonItems">
+            <summary>
+            Returns the collection of buttons that appears on the right side of the text. 
+            </summary>       
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBoxElement.LeftButtonItems">
+            <summary>
+            Returns the collection of buttons that appears on the left side of the text. 
+            </summary>       
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBoxElement.ButtonsStackLeft">
+            <summary>
+            Returns the panel tat contain the elements on the left.
+            </summary>       
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBoxElement.ButtonStackRight">
+            <summary>
+            Returns the panel tat contain the elements on the right.
+            </summary>       
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadButtonTextBoxElement.ShowTextBox">
+            <summary>
+            Shows/hides the inner text box.
+            </summary>       
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadButtonTextBoxElement.ItemClicked">
+            <summary>
+            Fires when an item is clicked.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditor.DropDownSizingMode">
+            <summary>
+            Gets or sets a value of the <see cref="T:Telerik.WinControls.UI.SizingMode"/> enumeration.
+            This value determines how the pop-up form can be resized: vertically, horizontally or both.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditor.TabStop">
+            <summary>
+            Gets or sets a value indicating whether the user can give the focus to this control
+            using the TAB key.
+            </summary>        /// 
+            <returns>true if the user can give the focus to the control using the TAB key;otherwise, false. The default is true.        </returns>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditor.AutoSize">
+            <summary>
+            Gets or sets whether the edit control is auto-sized
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditor.DropDownStyle">
+            <summary>
+            Gets or sets a value specifying the style of the DropDownList
+            </summary>        
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupOpened">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupOpening">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupClosing">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupClosed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontDropDownList.SelectOnHover">
+            <summary>
+            Enable or disables the preview font functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontDropDownList.FontListView">
+            <summary>
+            This property returns the underlying RadListView.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontDropDownList.PreviewFont">
+            <summary>
+            Gets the hovered font when the drop down is opened.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontDropDownList.SelectedFont">
+            <summary>
+            This property gets or sets the selected font.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontDropDownList.RecentlyUsedItemsCount">
+            <summary>
+            This property controls the number of items displayed in the Recently Used Fonts group.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontDropDownList.ShowRecentlyUsedFonts">
+            <summary>
+            This property shows/hides the Recently Used Fonts group.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadFontDropDownList.SelectedFontChanged">
+            <summary>
+            Fires when the selected font is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadFontDropDownList.PreviewFontChanged">
+            <summary>
+            Fires when the hovered font is changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditorElement.ArrowButtonElement">
+            <summary>
+            ArrowButton Property
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditorElement.Text">
+            <summary>
+            	Gets or sets the text associated with this item. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPopupEditorElement.DropDownStyle">
+            <summary>
+            Gets or sets a value specifying the style of the DropDownList
+            </summary>        
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.FontListView">
+            <summary>
+            Returns the underlying RadListView control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.FontNames">
+            <summary>
+            Returns a list that contains all system fonts.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.ShowRecentlyUsedFonts">
+            <summary>
+            Gets or sets the visibility of the Recently Used Fonts section.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.SelectedFont">
+            <summary>
+            Gets or sets the Selected font name.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.PreviewFont">
+            <summary>
+            Gets the hovered font when the drop down is opened.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.RecentlyUsedItemsCount">
+            <summary>
+            Gets or sets the count of the items in the recently used fonts section.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.SelectOnHover">
+            <summary>
+            Enable or disables the preview font functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.AllFontsItemText">
+            <summary>
+            Allows you to localize the text of the All Fonts group.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadFontPopupEditorElement.RecentlyUsedItemText">
+            <summary>
+            Allows you to localize the text of the Recently Used Fonts group.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadFontPopupEditorElement.SelectedFontChanged">
+            <summary>
+            Fires when the selected font is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadFontPopupEditorElement.PreviewFontChanged">
+            <summary>
+            Fires when the hovered font is changed.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.Gauges.LinearGaugeBar">
@@ -11047,64 +11704,6 @@
             <summary>
             This property is not relevant for this class.
             </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditor.DropDownSizingMode">
-            <summary>
-            Gets or sets a value of the <see cref="T:Telerik.WinControls.UI.SizingMode"/> enumeration.
-            This value determines how the pop-up form can be resized: vertically, horizontally or both.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditor.TabStop">
-            <summary>
-            Gets or sets a value indicating whether the user can give the focus to this control
-            using the TAB key.
-            </summary>        /// 
-            <returns>true if the user can give the focus to the control using the TAB key;otherwise, false. The default is true.        </returns>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditor.AutoSize">
-            <summary>
-            Gets or sets whether the edit control is auto-sized
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditor.DropDownStyle">
-            <summary>
-            Gets or sets a value specifying the style of the DropDownList
-            </summary>        
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupOpened">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupOpening">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupClosing">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadPopupEditor.PopupClosed">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditorElement.ArrowButtonElement">
-            <summary>
-            ArrowButton Property
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditorElement.Text">
-            <summary>
-            	Gets or sets the text associated with this item. 
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadPopupEditorElement.DropDownStyle">
-            <summary>
-            Gets or sets a value specifying the style of the DropDownList
-            </summary>        
         </member>
         <member name="T:Telerik.WinControls.UI.IPrintable">
             <summary>
@@ -14934,6 +15533,11 @@
             </summary>
             <param name="target">The drop target.</param>
             <returns>The size of the drag hint.</returns>
+        </member>
+        <member name="P:Telerik.WinControls.UI.BaseListViewElement.SelectGroupItems">
+            <summary>
+            Determines if the group items can be selected.
+            </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.BaseListViewElement.HorizontalScrollState">
             <summary>
@@ -20375,6 +20979,12 @@
             </summary>
             <value>The default custom date editor format.</value>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadDataFilterElement.TimeSpanEditorFormat">
+            <summary>
+            Gets or sets the format of TimeSpan editor.
+            </summary>
+            <value>The timespan editor format.</value>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadDataFilterElement.PropertyDisplayNameNeeded">
             <summary>
             Occurs when a property text is about to be displayed on the screen. Allows the developer to substitute property names with
@@ -22151,6 +22761,26 @@
             If set to true shows and OverflowPrimitive instead of an ArrowPrimitive.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.SelectedFontEventArgs.SelectedFont">
+            <summary>
+            Returns the new selected font.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.FormCaptionBorderPrimitive.BorderColor">
+            <summary>
+            Gets or sets the color of the form's first broder.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.FormCaptionBorderPrimitive.BorderColor1">
+            <summary>
+            Gets or sets the color of the form's second broder.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.FormCaptionBorderPrimitive.ShadowColor">
+            <summary>
+            Gets or sets the color of the form's client area shadow.
+            </summary>
+        </member>
         <member name="T:Telerik.WinControls.UI.RadFormDesignerRibbonDialog">
             <summary>
             This class represents the dialog form shown to the user when they drop
@@ -22870,21 +23500,6 @@
             A class that represents the Border Primitive used in the new RadRibbonForm.
             </summary>
         </member>
-        <member name="P:Telerik.WinControls.UI.RibbonFormBorderPrimitive.BorderColor">
-            <summary>
-            Gets or sets the color of the form's first broder.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RibbonFormBorderPrimitive.BorderColor1">
-            <summary>
-            Gets or sets the color of the form's second broder.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RibbonFormBorderPrimitive.ShadowColor">
-            <summary>
-            Gets or sets the color of the form's client area shadow.
-            </summary>
-        </member>
         <member name="T:Telerik.WinControls.UI.RibbonFormElement">
             <summary>
             This is the class that represents the element hierarchy which
@@ -22952,6 +23567,1109 @@
         <member name="P:Telerik.WinControls.UI.RadTitleBarElement.ImageIcon">
             <summary>
             An Icon that represents the icon for the form.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.TabbedFormBorderPrimitive">
+            <summary>
+            A class that represents the Border Primitive used in the new RadTabbedForm.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.TabbedFormControlCreatingEventArgs.TabbedFormControl">
+            <summary>
+            Gets or sets the RadTabbedFormControl added to the form.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.TabbedFormShownEventArgs.TabbedForm">
+            <summary>
+            Gets the associated RadTabbedForm.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.PinnedItemsPosition">
+            <summary>
+            Defines the position of the pinned items.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.TabItemDragMode">
+            <summary>
+            Defines possible modes for dragging items within a <see cref="T:Telerik.WinControls.UI.RadTabbedFormControl">RadTabbedFormControl</see> instance
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.TabItemDragMode.None">
+            <summary>
+            Item dragging is disabled.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.TabItemDragMode.Immediate">
+            <summary>
+            Items can be immediately reordered while inside the tabs element.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.TabItemDragMode.Preview">
+            <summary>
+            A preview is generated, indicating where the item will be inserted when dropped. This mode is cancelable.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemConextMenuOpeningEventArgs.TabItem">
+            <summary>
+            Gets the tab item on which it has been clicked.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemConextMenuOpeningEventArgs.ContextMenu">
+            <summary>
+            Gets or sets the context menu.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.GanttViewLinkChangedEventArgs">
+            <summary>
+            Represents the event arguments for the LinkChanged event of RadGanttView.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs">
+            <summary>
+            Represents the event arguments for a link event of RadGanttView.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs"/> class.
+            </summary>
+            <param name="link">The link.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.Link">
+            <summary>
+            Gets the link.
+            </summary>
+            <value>
+            The link.
+            </value>
+        </member>
+        <member name="M:Telerik.WinControls.UI.GanttViewLinkChangedEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.GanttViewLinkChangedEventArgs"/> class.
+            </summary>
+            <param name="link">The link.</param>
+            <param name="propertyName">The link proeprty that changed.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.GanttViewLinkChangedEventArgs.PropertyName">
+            <summary>
+            Gets the property that was changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlEventArgs.Tab">
+            <summary>
+            Gets the associated RadTabbedFormControlTab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCancelEventArgs.Cancel">
+            <summary>
+            Determines whether the event is canceled or may continue.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlIndexChangedEventArgs.OldIndex">
+            <summary>
+            Gets the index at which the tab was before the change.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlIndexChangedEventArgs.NewIndex">
+            <summary>
+            Gets the index at which the tab is currently at.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlIndexChangingEventArgs.CurrentIndex">
+            <summary>
+            Gets the index the tab is currently at.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlIndexChangingEventArgs.NewIndex">
+            <summary>
+            Gets or sets the new index to be applied to the associated tab.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTabbedForm">
+            <summary>
+            This class represents a Form that hosts a RadTabbedFormControl control. 
+            The RadTabbedFormControl has a collection of tabs painted in the non-client area and associated containers hosting other controls.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedForm.TabbedFormControlCreating">
+            <summary>
+            Raised while creating the RadTabbedFormControl. The event is raised only when the form is created at run-time.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedForm.ShowIcon">
+            <summary>
+            Gets or sets a value indicating whether an icon is displayed in the caption bar of the form.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedForm.FormElement">
+            <summary>
+            Gets the main element of the RadTabbedForm.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedForm.TabbedFormControl">
+            <summary>
+            Gets the RadTabbedFormControl which is used internally by the form 
+            responsible for working with the tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedForm.AllowAero">
+            <summary>
+            Gets or sets a boolean value that determines whether the standard title bar will be painted.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormBehavior.#ctor">
+            <summary>
+            Creates an instance of the <see cref="T:Telerik.WinControls.UI.RadTabbedFormBehavior"/> class.        
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormBehavior.#ctor(Telerik.WinControls.IComponentTreeHandler)">
+            <summary>
+            Creates an instance of the <see cref="T:Telerik.WinControls.UI.RadTabbedFormBehavior"/> class.
+            <param name="treeHandler">The <see cref="T:Telerik.WinControls.IComponentTreeHandler"/> implementation
+            which this behavior is associated with.</param>
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormBehavior.#ctor(Telerik.WinControls.IComponentTreeHandler,System.Boolean)">
+            <summary>
+            Creates an instance of the <see cref="T:Telerik.WinControls.UI.RadTabbedFormBehavior"/> class.
+            </summary>
+            <param name="treeHandler">The associated <see cref="T:Telerik.WinControls.IComponentTreeHandler"/> implementation.</param>
+            <param name="shouldHandleCreateChildItems">Determines whether the behavior
+            handles the CreateChildItems call.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormBehavior.AdjustBehaviorForCompositionSate">
+            <summary>
+            This method adjusts the form's element tree according to the composition state
+            of MS Windows. If Composition is enabled, the element tree is hidden and the glass
+            effects of the form are visible.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormBehavior.NCFromClientCoordinates(System.Drawing.Point)">
+            <summary>
+            This method translates a point which is in client coordinates
+            to a point in NC coordinates. Used when the Form has captured the mouse
+            and NC mouse events have to be processed.
+            </summary>
+            <param name="clientCoordinates">A point in client coordinates.</param>
+            <returns>The point in NC coordinates.</returns>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormBehavior.CaptionHeight">
+            <summary>
+            Returns a zero for the caption height.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormBehavior.TopCompositionMargin">
+            <summary>
+            Gets an integer representing the top client margin of 
+            the form when composition is enabled.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormBehavior.CompositionEffectsEnabled">
+            <summary>
+            Gets a boolean value indicating whether composition effects
+            are enabled for the form.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormBehavior.CompositionEnabled">
+            <summary>
+            Gets a value indicating whether composition effects are enabled for the Operating System.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormBehavior.AllowTheming">
+            <summary>
+            Gets or sets value indicating whether the RadTabbedFormControl
+            is drawn over the Aero glass under Vista or later 
+            versions of Windows.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemCreatingEventArgs.Item">
+            <summary>
+            Gets the associated RadTabbedFormControlItem.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemDroppedEventArgs.DraggedItem">
+            <summary>
+            Gets the item that is being dropped.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemDroppedEventArgs.TargetItem">
+            <summary>
+            Gets the item that the DraggedItem is being dropped on.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemDroppingEventArgs.DraggedItem">
+            <summary>
+            Gets the item that is being dropped.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItemDroppingEventArgs.TargetItem">
+            <summary>
+            Gets the item that the DraggedItem is being dropped on.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemEventArgs.SelectedItem">
+            <summary>
+            Gets the selected item of tabbed form control.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemEventArgs.NextItem">
+            <summary>
+            Gets the item to be selected.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlItemEventArgs.#ctor(Telerik.WinControls.UI.RadTabbedFormControlItem,Telerik.WinControls.UI.RadTabbedFormControlItem)">
+            <summary>
+            Initializes a new instance of the RadTabbedFormControlItemEventArgs class.
+            <param name="selectedItem">The selected item of tabbed form control.</param>
+            <param name="nextItem">The item to be selected.</param>
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTabbedFormControlItemsChangedEventArgs">
+            <summary>
+            Provides data for the RadTabbedFormControlItemsChanged event.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemsChangedEventArgs.ChangedItem">
+            <summary>
+            Gets the changed item.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemsChangedEventArgs.Operation">
+            <summary>
+            Gets the change operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlItemsChangedEventArgs.#ctor(Telerik.WinControls.UI.RadTabbedFormControlItem,Telerik.WinControls.ItemsChangeOperation)">
+            <summary>
+            Initializes a new instance of the RadTabbedFormControlItemsChangedEventArgs class.
+            </summary>
+            <param name="changedItem">The changed item.</param>
+            <param name="operation">The change operation.</param>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTabbedFormControlItemSelectedEventArgs">
+            <summary>
+            Provides data for the RadTabbedFormControlItemSelected event.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemSelectedEventArgs.PreviousItem">
+            <summary>
+            Gets the previous selected item of the tabbed form control.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemSelectedEventArgs.SelectedItem">
+            <summary>
+            Gets the selected item of RadPageView.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlItemSelectedEventArgs.#ctor(Telerik.WinControls.UI.RadTabbedFormControlItem,Telerik.WinControls.UI.RadTabbedFormControlItem)">
+            <summary>
+            Initializes a new instance of the RadTabbedFormControlItemSelectedEventArgs class.
+            </summary>
+            <param name="previousItem">The previous selected item of the tabbed form control.</param>
+            <param name="selectedItem">The selected item of of the tabbed form control.</param>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemSelectingEventArgs.SelectedItem">
+            <summary>
+            Gets the selected item of RadPageView.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.RadTabbedFormControlItemSelectingEventArgs.NextItem">
+            <summary>
+            Gets the item to be selected.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlItemSelectingEventArgs.#ctor(Telerik.WinControls.UI.RadTabbedFormControlItem,Telerik.WinControls.UI.RadTabbedFormControlItem)">
+            <summary>
+            Initializes a new instance of the RadPageViewItemSelectingEventArgs class.
+            <param name="selectedItem">The selected item of RadPageView.</param>
+            <param name="nextItem">The item to be selected.</param>
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Localization.RadTabbedFormControlStringId">
+            <summary>
+            Represents localization strings in the RadTabbedFormControl.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTabbedFormControl">
+            <summary>
+            Represents a control that has a collection of tabs painted in the non-client area and associated containers hosting other controls.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControl.#cctor">
+            <summary>Initializes a new instance of the RadTabbedFormControl control class.</summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControl.SuspendEvents">
+            <summary>
+            Temporary suspends event raising.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControl.ResumeEvents">
+            <summary>
+            Resumes event raising, previously suspended by a SuspendEvents call.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.ItemDropping">
+            <summary>
+            Occurs when an item is about to be dropped over another item.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.ItemDropped">
+            <summary>
+            Occurs when an item was dropped over another item.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.ItemCreating">
+            <summary>
+            Raised when page item is about to be created.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.ContextMenuOpening">
+            <summary>
+            Raised when page item is about to be created.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabAdding">
+            <summary>
+            Raised when a new tab is about to be added to the control. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabAdded">
+            <summary>
+            Raised when a new tab has been successfully added to the control.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabRemoving">
+            <summary>
+            Raised when a tab is about to be removed from the control. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabRemoved">
+            <summary>
+            Raised when a tab has been successfully removed from the control.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabItemIndexChanging">
+            <summary>
+            Raised when a page is about to change its index. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabItemIndexChanged">
+            <summary>
+            Raised when a tab's index has been successfully changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabsClearing">
+            <summary>
+            Raised when all tabs are about to be removed from the control. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.TabsCleared">
+            <summary>
+            Raised when all tabs have been successfully removed from the control.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.SelectedTabChanging">
+            <summary>
+            Raised when currently selected tab has changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.SelectedTabChanged">
+            <summary>
+            Raised when currently selected tab has changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControl.NewTabRequested">
+            <summary>
+            Raised when a new tab is requested.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.CanRaiseEvents">
+            <summary>
+            Determines whether event raising is currently enabled.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.CaptionHeight">
+            <summary>
+            Gets or sets the height of the extended title bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ShowText">
+            <summary>
+            Gets or sets whether the element holding the text is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ShowIcon">
+            <summary>
+            Gets or sets a value indicating whether an icon is displayed in the caption bar of the form.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ShowTabPinButton">
+            <summary>
+            Gets or sets whether pin button will be displayed in the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ShowTabCloseButton">
+            <summary>
+            Gets or sets whether close button will be displayed in the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ShowNewTabButton">
+            <summary>
+            Gets or sets whether the new tab button will be visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.PinnedItemsPosition">
+            <summary>
+            Gets or sets whether the pinned items will be displayed at the front or at the back of the title bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ItemDragMode">
+            <summary>
+            Gets or sets the drag mode of the tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.MinimumTabWidth">
+            <summary>
+            Gets or sets the minimum width of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.TabHeight">
+            <summary>
+            Gets or sets the default height of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.TabSpacing">
+            <summary>
+            Gets or sets the spacing between the tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.TabWidth">
+            <summary>
+            Gets or sets the default width of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.SelectedTab">
+            <summary>
+            Gets or sets the RadTabbedFormControlTab instance that is currently selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.Tabs">
+            <summary>
+            Gets the collection of tabs for this view.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.AutoSize">
+            <summary>
+            Gets or sets whether the edit control is auto-sized
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.SmallImageList">
+            <summary>
+            Gets or sets the small image list
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.Text">
+            <summary>
+            Gets or sets the text of the control
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.CausesValidation">
+            <summary>
+            Gets or sets a flag indicating whether the control causes validation
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.LeftItemsContainer">
+            <summary>
+            Gets the left LeftItemsContainer element
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.LeftItems">
+            <commentsfrom cref="P:Telerik.WinControls.UI.RadTabbedFormControlElement.LeftItems" filter=""/>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.RightItemsContainer">
+            <summary>
+            Gets the right RightItemsContainer element
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.RightItems">
+            <commentsfrom cref="P:Telerik.WinControls.UI.RadTabbedFormControlElement.RightItems" filter=""/>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.TabbedFormControlTabsElement">
+            <summary>
+            Gets the TabbedFormControlTabsElement element
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.TabbedFormControlElement">
+            <summary>
+            Gets the instance of RadTabbedFormControlElement wrapped by this control. The RadTabbedFormControlElement
+            is the main element in the hierarchy tree and encapsulates the actual functionality of RadTabbedFormControl.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.MinimizeButton">
+            <summary>
+            Gets or sets if the tabbed form has minimize button in its caption
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.MaximizeButton">
+            <summary>
+            Gets or sets if the tabbed form has maximize button in its caption
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.CloseButton">
+            <summary>
+            Gets or sets if the tabbed form has close button in its caption
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.BackColor">
+            <summary>
+            RadTabbedFormControl consists of multiple visual elements and separate settings are provided to customize their appearance.
+            Current BackColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControl.ForeColor">
+            <summary>
+            RadTabbedFormControl consists of multiple visual elements and separate settings are provided to customize their appearance.
+            Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlContentAreaElement.Owner">
+            <summary>
+            Gets the RadTabbedFormControlElement instance that owns this instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemFromPoint(System.Drawing.Point)">
+            <summary>
+            Gets the item that contains the porvided point (in control's client coordinates).
+            </summary>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlElement.SelectNextItem">
+            <summary>
+            Selects the next available item.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlElement.SelectPreviousItem">
+            <summary>
+            Selects the previous available item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.CaptionHeight">
+            <summary>
+            Gets or sets the height of the extended title bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ShowText">
+            <summary>
+            Gets or sets whether the element holding the text is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ShowIcon">
+            <summary>
+            Gets or sets a value indicating whether an icon is displayed in the caption bar of the form.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ShowTabCloseButton">
+            <summary>
+            Gets or sets whether close button will be displayed in the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ShowTabPinButton">
+            <summary>
+            Gets or sets whether pin button will be displayed in the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ShowNewTabButton">
+            <summary>
+            Gets or sets whether the new tab button will be visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.PinnedItemsPosition">
+            <summary>
+            Gets or sets whether the pinned items will be displayed at the front or at the back of the title bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemDragMode">
+            <summary>
+            Gets or sets the drag mode of the tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.MinimumTabWidth">
+            <summary>
+            Gets or sets the minimum width of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.TabWidth">
+            <summary>
+            Gets or sets the default width of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.TabHeight">
+            <summary>
+            Gets or sets the default height of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.TabSpacing">
+            <summary>
+            Gets or sets the spacing between the tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.IconPrimitive">
+            <summary>
+            Gets the icon element.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.TabbedFormCaption">
+            <summary>
+            Gets the element which represents the caption area of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ContentArea">
+            <summary>
+            Gets the element which represents the content area of the tab view.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.MinimizeButton">
+            <summary>
+            Gets or sets the Minimize button
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.MaximizeButton">
+            <summary>
+            Gets or sets the Maximize button
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.CloseButton">
+            <summary>
+            Gets or sets the Close button
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.LeftItemsContainer">
+            <summary>
+            Gets the LeftItemsContainer
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.LeftItems">
+            <summary>
+            Gets the collection of the left items.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.RightItemsContainer">
+            <summary>
+            Gets the RightItemsContainer
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.RightItems">
+            <summary>
+            Gets the collection of the right items.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.CaptionFill">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.Primitives.FillPrimitive"/>instance
+            that represents the fill of the tabbed control's caption.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.CaptionBorder">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.Primitives.BorderPrimitive"/>instance
+            that represents the border of the tabbed control's caption.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.SelectedItem">
+            <summary>
+            Gets or sets the currently selected item in the view.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.NewItem">
+            <summary>
+            Gets the item which stands for adding new tabs on click.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.Items">
+            <summary>
+            Gets all the items currently present within this element.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.PinnedItems">
+            <summary>
+            Gets all the pinned items.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemDragService">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.WinControls.RadDragDropService">RadDragDropService</see> instance which handles item drag requests.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemDragHint">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.WinControls.RadImageShape">RadImageShape</see> instance which describes the hint that indicates where an item will be dropped after a drag operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlElement.Owner">
+            <summary>
+            Gets or sets the owner <see cref="T:Telerik.WinControls.UI.RadTabbedFormControl">RadTabbedFormControl</see> instance.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemClicked">
+            <summary>
+            Occurs when a tab is clicked.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ContextMenuOpening">
+            <summary>
+            Occurs before the default context menu is opened.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemCreating">
+            <summary>
+            Occurs before the tab items is attached to its owner element.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemSelecting">
+            <summary>
+            Occurs before the tab is selected.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemSelected">
+            <summary>
+            Occurs after a tab is selected.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemsChanged">
+            <summary>
+            Occurs when a tab is added or removed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemDropping">
+            <summary>
+            Occurs before a tab is dropped.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlElement.ItemDropped">
+            <summary>
+            Occurs after a tap is dropped.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.CaptionHeight">
+            <summary>
+            Gets or sets the height of the extended title bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.HelpButton">
+            <summary>
+            Gets the Help button.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.MinimizeButton">
+            <summary>
+            Gets the Minimize button
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.MaximizeButton">
+            <summary>
+            Gets the Maximize button
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.CloseButton">
+            <summary>
+            Gets the Close button
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.SystemButtons">
+            <summary>
+            Gets the element holding the system buttons.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlCaption.TabbedFormControlTabsElement">
+            <summary>
+            Gets the RadTabbedFormControlTabsElement.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlCaption.Close">
+            <summary>
+            Fires when the close button is clicked
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlCaption.Minimize">
+            <summary>
+            Fires when the minimize button is clicked
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTabbedFormControlCaption.MaximizeRestore">
+            <summary>
+            Fires when the maximize button is clicked
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTabbedFormControlTab">
+            <summary>
+            Represents a tab in a RadTabbedFormControl instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.TextImageRelation">
+            <summary>
+            Gets or sets the position of text and image relative to each other. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.ImageAlignment">
+            <summary>
+            Gets or sets the alignment of the image on the drawing surface.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.TextAlignment">
+            <summary>
+            Gets or sets the alignment of the text content on the drawing surface.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.Image">
+            <summary>
+            Gets or sets the image to be displayed by the associated RadTabbedFormControlItem instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.ToolTipText">
+            <summary>
+            Gets or sets the tooltip to be displayed when the item hovers tab's associated item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.Text">
+            <summary>
+            Gets or sets the text to be displayed in the associated item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.Owner">
+            <summary>
+            Gets the RadTabbedFormControl instance that owns this tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTab.Item">
+            <summary>
+            Gets the RadTabbedFormControlItem instance which is the UI representation of this tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItem.IsSelected">
+            <summary>
+            Determines whether the item is currently selected (associated with the SelectedTab of the owning RadTabbedFormControl).
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItem.FillPadding">
+            <summary>
+            Gets or sets the padding that defines the offset of element's fill.
+            This does not affect element's layout logic such as size and location but has only appearance impact.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlItem.Tab">
+            <summary>
+            Gets the RadTabbedFormControlTab instance associated with this item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlObject.Owner">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.UI.RadTabbedFormControl"/> instance that this object is associated with.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Add(Telerik.WinControls.UI.RadTabbedFormControlTab)">
+            <summary>
+            Adds the specified tab to the Tabs collection.
+            </summary>
+            <param name="item">
+            The RadTabbedFormControlTab to add to the control collection.
+            </param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Clear">
+            <summary>
+            Removes all tabs from the collection.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Contains(Telerik.WinControls.UI.RadTabbedFormControlTab)">
+            <summary>
+            Checks for a particular tab if it is part of the collection.
+            </summary>
+            <param name="item">The RadTabbedFormControlTab to check if contained.</param>
+            <returns>
+             True if the collection contains the tab; otherwise false.
+            </returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Contains(System.String,System.Boolean)">
+            <summary>
+            Checks by name if a particular tab is part of the collection.
+            </summary>
+            <param name="name">
+            The name to check the collection.
+            </param>
+            <param name="ignoreCase">
+            Specifies whether the casing will be ignored.
+            </param>
+            <returns>
+            True if the collection contains the name; otherwise false.
+            </returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Contains(System.String)">
+            <summary>
+            Checks by name if a particular tab is part of the collection.
+            </summary>
+            <param name="name">
+            The name to check the collection. Performs case insensitive "Contains".
+            </param>
+            <returns>
+            True if the collection contains the name; otherwise false.
+            </returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.CopyTo(Telerik.WinControls.UI.RadTabbedFormControlTab[],System.Int32)">
+            <summary>
+            Copies the entire contents of this collection to a compatible one-dimensional
+            System.Array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">
+             The one-dimensional System.Array that is the destination of the elements copied
+             from the current collection. The array must have zero-based indexing.
+            </param>
+            <param name="arrayIndex">
+            The zero-based index in array at which copying begins.
+            </param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Remove(Telerik.WinControls.UI.RadTabbedFormControlTab)">
+            <summary>
+            Removes the specified tab from the tabs collection.
+            </summary>
+            <param name="item">
+            The RadTabbedFormControlTab to remove from the RadTabbedFormControlCollection.
+            </param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.IndexOf(Telerik.WinControls.UI.RadTabbedFormControlTab)">
+            <summary>
+            Retrieves the index of the specified tab in the tabs collection.
+            </summary>
+            <param name="item">
+            The RadTabbedFormControlTab to locate in the collection.
+            </param>
+            <returns>
+              A zero-based index value that represents the position of the specified RadTabbedFormControlTab
+              in the RadTabbedFormControlCollection.
+            </returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Insert(System.Int32,Telerik.WinControls.UI.RadTabbedFormControlTab)">
+            <summary>
+            Inserts the specified item at a given index in the RadTabbedFormControlCollection.
+            </summary>
+            <param name="index">
+            The index at which the RadTabbedFormControlTab will be inserted.
+            </param>
+            <param name="item">
+            The RadTabbedFormControlTab to be inserted in the collection.
+            </param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Swap(Telerik.WinControls.UI.RadTabbedFormControlTab,Telerik.WinControls.UI.RadTabbedFormControlTab)">
+            <summary>
+            Swaps the positions of the two tabs inside the RadTabbedFormControlCollection.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.ChangeIndex(Telerik.WinControls.UI.RadTabbedFormControlTab,System.Int32)">
+            <summary>
+            Sets the index of the specified child control in the collection to the specified
+            index value.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes a RadTabbedFormControlTab from the collection at the specified indexed location.
+            </summary>
+            <param name="index">
+            The index value of the RadTabbedFormControlTab to remove.
+            </param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Count">
+            <summary>
+            Gets the number of elements in the collection.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Item(System.Int32)">
+            <summary>
+            Indicates the System.Windows.Forms.Control at the specified indexed location
+            in the collection.
+            </summary>
+            <param name="index">
+            The index of the control to retrieve from the control collection.
+            </param>
+            <returns>
+            The RadTabbedFormControlTab located at the specified index location within
+            the control collection.
+            </returns>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabCollection.Item(System.String)">
+            <summary>
+            Indicates a RadTabbedFormControlTab with the specified name in the collection.
+            </summary>
+            <param name="name">
+            The name of the tab to retrieve from the control collection.
+            </param>
+            <returns>
+            The RadTabbedFormControlTab with the specified name within the RadTabbedFormControlCollection.
+            </returns>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.MinimumTabWidth">
+            <summary>
+            Gets or sets the minimum width of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.TabWidth">
+            <summary>
+            Gets or sets the default width of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.TabHeight">
+            <summary>
+            Gets or sets the default height of the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.TabSpacing">
+            <summary>
+            Gets or sets the spacing between the tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.ShowTabPinButton">
+            <summary>
+            Gets or sets whether pin button will be displayed in the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.ShowTabCloseButton">
+            <summary>
+            Gets or sets whether close button will be displayed in the tab.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.ShowNewTabButton">
+            <summary>
+            Gets or sets whether the new tab button will be visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.PinnedItemsPosition">
+            <summary>
+            Gets or sets whether the pinned items will be displayed at the front or at the back of the title bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.NewItem">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.UI.RadTabbedFormControlItem">RadTabbedFormControlItem</see> which stands for adding
+            new tabs on click.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.PreviousItemsButton">
+            <summary>
+            Gets the button element navigating the layout to show tabs to left of the currenlty visible tabs
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.NextItemsButton">
+            <summary>
+            Gets the button element navigating the layout to show tabs to right of the currenlty visible tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTabbedFormControlTabsElement.PinnedItems">
+            <summary>
+            Gets an observable collection holding the pinned items.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.TabbedFormElement.Border">
+            <summary>
+            Gets the BorderPrimitive of the RadFormElement.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.GanttViewDefaultContextMenu">
@@ -24315,6 +26033,11 @@
             The link data item.
             </value>
         </member>
+        <member name="T:Telerik.WinControls.UI.GanttViewItemChangedEventArgs">
+            <summary>
+            Represents the event arguments for the ItemChanged event of RadGanttView.
+            </summary>
+        </member>
         <member name="T:Telerik.WinControls.UI.RadGanttViewEventArgs">
             <summary>
             Represents the event arguments for an item event raised by RadGanttView.
@@ -24334,24 +26057,17 @@
             The item.
             </value>
         </member>
-        <member name="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs">
+        <member name="M:Telerik.WinControls.UI.GanttViewItemChangedEventArgs.#ctor(Telerik.WinControls.UI.GanttViewDataItem,System.String)">
             <summary>
-            Represents the event arguments for a link event of RadGanttView.
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.GanttViewItemChangedEventArgs"/> class.
             </summary>
+            <param name="item">The data item.</param>
+            <param name="propertyName">The item proeprty that changed.</param>
         </member>
-        <member name="M:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+        <member name="P:Telerik.WinControls.UI.GanttViewItemChangedEventArgs.PropertyName">
             <summary>
-            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs"/> class.
+            Gets the property that was changed.
             </summary>
-            <param name="link">The link.</param>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.Link">
-            <summary>
-            Gets the link.
-            </summary>
-            <value>
-            The link.
-            </value>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewSelectedLinkChangedEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
             <summary>
@@ -25747,24 +27463,14 @@
             Occurs when an item is data bound.
             </summary>
         </member>
-        <member name="E:Telerik.WinControls.UI.RadGanttView.ItemAdded">
-            <summary>
-            Occurs when a new item is added to the Items collection.
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadGanttView.ItemRemoved">
-            <summary>
-            Occurs when an item removed from the Items collection.
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadGanttView.ItemChanged">
-            <summary>
-            Occurs when an item's property is changed.
-            </summary>
-        </member>
         <member name="E:Telerik.WinControls.UI.RadGanttView.LinkDataBound">
             <summary>
             Occurs when a link is data bound.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttView.ItemAdded">
+            <summary>
+            Occurs when a new item is added to the Items collection.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadGanttView.LinkAdded">
@@ -25772,9 +27478,24 @@
             Occurs when a new link added to the Links collection.
             </summary>
         </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttView.ItemRemoved">
+            <summary>
+            Occurs when an item removed from the Items collection.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadGanttView.LinkRemoved">
             <summary>
             Occurs when a link is removed from the Links collection.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttView.ItemChanged">
+            <summary>
+            Occurs when an item's property is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttView.LinkChanged">
+            <summary>
+            Occurs when a link's property is changed.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadGanttView.HeaderCellElementCreating">
@@ -26216,6 +27937,12 @@
             Raises the <see cref="E:LinkRemoved"/> event.
             </summary>
             <param name="e">The <see cref="T:Telerik.WinControls.UI.GanttViewLinkRemovedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewElement.OnLinkChanged(Telerik.WinControls.UI.GanttViewLinkChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:LinkChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.GanttViewLinkChangedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.RadGanttViewElement.OnHeaderCellCreating(Telerik.WinControls.UI.GanttViewHeaderCellElementCreatingEventArgs)">
             <summary>
@@ -26880,6 +28607,11 @@
         <member name="E:Telerik.WinControls.UI.RadGanttViewElement.LinkRemoved">
             <summary>
             Occurs when a link is removed from the Links collection.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttViewElement.LinkChanged">
+            <summary>
+            Occurs when a link's property is changed.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadGanttViewElement.HeaderCellElementCreating">
@@ -42281,46 +44013,47 @@
         </member>
         <member name="T:Telerik.WinControls.UI.CommandBarTextBox">
             <summary>
-            Represetns a text box in <see cref="T:Telerik.WinControls.UI.CommandBarStripElement"/>.
+            Represents a text box in <see cref="T:Telerik.WinControls.UI.CommandBarStripElement"/>.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.AppendText(System.String)">
             <summary>
-            Appends the given text
+            Appends text to the current text of a text box.
             </summary>
-            <param name="text"></param>
+            <param name="text">The text to append to the current contents of the text box.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Clear">
             <summary>
-            Clears the editing control's text
+            Clears all text from the text box control.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.ClearUndo">
             <summary>
-            Clears and undoes the text
+            Clears information about the most recent operation from the undo buffer of the text box.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Copy">
             <summary>
-            Copies the selected text
+            Copies the current selection in the text box to the Clipboard.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Cut">
             <summary>
-            Cuts the selected text
+            Moves the current selection in the text box to the Clipboard.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.DeselectAll">
             <summary>
-            clears the selection
+            Specifies that the value of the <see cref="P:System.Windows.Forms.TextBoxBase.SelectionLength"/>
+            property is zero so that no characters are selected in the control.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.GetCharFromPosition(System.Drawing.Point)">
             <summary>
-            Gets a character from a given point
+            Retrieves the character that is closest to the specified location within the control.
             </summary>
-            <param name="point"></param>
-            <returns></returns>
+            <returns>The character at the specified location.</returns>
+            <param name="point">The location from which to seek the nearest character.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.GetCharIndexFromPosition(System.Drawing.Point)">
             <summary>
@@ -42331,67 +44064,66 @@
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.GetFirstCharIndexFromLine(System.Int32)">
             <summary>
-            gets the index of the first char in a given line
+            Retrieves the index of the first character of a given line.
             </summary>
-            <param name="lineNumber"></param>
-            <returns></returns>
+            <returns>The zero-based index of the first character in the specified line.</returns>
+            <param name="lineNumber">The line for which to get the index of its first character.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.GetFirstCharIndexOfCurrentLine">
             <summary>
-            gets the first char index at the current line
+            Retrieves the index of the first character of the current line.
             </summary>
-            <returns></returns>
+            <returns>The zero-based character index in the current line.</returns>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.GetLineFromCharIndex(System.Int32)">
             <summary>
-            Gets a line number from a char index
+            Retrieves the line number from the specified character position within the text of the control.
             </summary>
-            <param name="index"></param>
-            <returns></returns>
+            <param name="index">The character index position to search. </param>
+            <returns>The zero-based line number in which the character index is located.</returns>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.GetPositionFromCharIndex(System.Int32)">
             <summary>
-            Gets the position from a char index
+            Retrieves the location within the control at the specified character index.
             </summary>
-            <param name="index"></param>
-            <returns></returns>
+            <returns>The location of the specified character within the client rectangle of the control.</returns>
+            <param name="index">The index of the character for which to retrieve the location.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Paste">
             <summary>
-            pastes the text in the clipboard
+            Replaces the current selection in the text box with the contents of the Clipboard.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Paste(System.String)">
             <summary>
-            Pasted a given text
-            </summary>
-            <param name="text"></param>
+            Sets the selected text to the specified text without clearing the undo buffer.</summary>
+            <param name="text">The text to replace.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.ScrollToCaret">
             <summary>
-            scrolls the textbox to the caret position
+            Scrolls the contents of the control to the current caret position.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Select(System.Int32,System.Int32)">
             <summary>
-            Makes a selection in a given range specified by a start position and selection length
+            Selects a range of text in the text box.
             </summary>
-            <param name="start"></param>
-            <param name="length"></param>
+            <param name="start">The position of the first character in the current text selection within the text box. </param>
+            <param name="length">The number of characters to select. </param>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.SelectAll">
             <summary>
-            selects the whole text
+            Selects all text in the text box.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CommandBarTextBox.Select">
             <summary>
-            selects the hosted control
+            Activates the hosted text box control.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CommandBarTextBox.VisibleInStrip">
             <summary>
-            	Show or hide item from the strip
+            Indicates whether the item should be drawn in the strip.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CommandBarTextBox.TextBoxElement">
@@ -42399,29 +44131,40 @@
             Gets or sets the hosted <see cref="T:Telerik.WinControls.UI.RadTextBoxElement"/>.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.CommandBarTextBox.Text">
+            <summary>
+            Gets or sets the text associated with this item.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.CommandBarTextBox.PasswordChar">
+            <summary>
+            Gets or sets the character used to mask characters of a password in a single-line text box.
+            control.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.CommandBarTextBox.NullText">
             <summary>
-            Gets or sets the prompt text that is displayed when the TextBox  contains no text
+            Gets or sets the prompt text that is displayed when the text box contains no text.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CommandBarTextBox.NullTextColor">
             <summary>
-            Gets or sets the color of prompt text that is displayed when the TextBox  contains no text
+            Gets or sets the color of prompt text that is displayed when the text box contains no text.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CommandBarTextBox.SelectionLength">
             <summary>
-            Gets or sets the number of characters selected in the editable portion of the textbox.
+            Gets or sets the number of characters selected in the text box.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CommandBarTextBox.SelectionStart">
             <summary>
-            Gets or sets the starting index of text selected in the textbox.
+            Gets or sets the starting point of text selected in the text box.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.KeyPress">
             <summary>
-            Occurs when the CommandBarTextBox has focus and the user pressees a key
+            Occurs when the CommandBarTextBox has focus and the user presses a key
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.KeyUp">
@@ -42431,7 +44174,7 @@
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.KeyDown">
             <summary>
-            Occurs when the CommandBarTextBox has focus and the user pressees a key down
+            Occurs when the CommandBarTextBox has focus and the user presses a key down
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.TextChanging">
@@ -42441,12 +44184,12 @@
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.TextChanged">
             <summary>
-            	Occurs when the Text property value changes.
+            Occurs when the Text property value changes.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.GotFocus">
             <summary>
-            Occurs when the element recieves focus.
+            Occurs when the element receives focus.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.CommandBarTextBox.LostFocus">
@@ -45212,17 +46955,17 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadPageViewPage.TextImageRelation">
             <summary>
-            Gets or sets the title of the Page. Title appears in the Header area of the owning RadPageView.
+            Gets or sets the position of text and image relative to each other. 
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadPageViewPage.ImageAlignment">
             <summary>
-            Gets or sets the title of the Page. Title appears in the Header area of the owning RadPageView.
+            Gets or sets the alignment of the image on the drawing surface.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadPageViewPage.TextAlignment">
             <summary>
-            Gets or sets the title of the Page. Title appears in the Header area of the owning RadPageView.
+            Gets or sets the alignment of the text content on the drawing surface.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadPageViewPage.Image">
@@ -47151,7 +48894,7 @@
         </member>
         <member name="T:Telerik.WinControls.UI.RadTimePickerStringId">
             <summary>
-            RadWizard localization strings.
+            RadTimePicker localization strings.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.RadTimePicker.#ctor">
@@ -47280,12 +49023,12 @@
         </member>
         <member name="E:Telerik.WinControls.UI.RadTimePicker.KeyDown">
             <summary>
-            Occurs when the RadItem has focus and the user pressees a key down
+            Occurs when the RadItem has focus and the user presses a key down
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadTimePicker.KeyPress">
             <summary>
-            Occurs when the RadItem has focus and the user pressees a key
+            Occurs when the RadItem has focus and the user presses a key
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadTimePicker.KeyUp">
@@ -47394,6 +49137,394 @@
         <member name="E:Telerik.WinControls.UI.RadTimePickerElement.ValueChanged">
             <summary>
             Occurs when the editing value has been changed
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTimeSpanPickerLocalizationProvider">
+            <summary>
+            Provides localization services for RadTimeSpanPicker.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerLocalizationProvider.GetLocalizedString(System.String)">
+            <summary>
+            Gets the string corresponding to the given ID.
+            </summary>
+            <param name="id">String ID.</param>
+            <returns>The string corresponding to the given ID.</returns>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadTimeSpanPickerStringId">
+            <summary>
+            RadTimeSpanPicker localization strings.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ITimeSpanPickerComponent.CreateVisualElement">
+            <summary>
+            Creates the visual element.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.TimeSpanPickerElement">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.UI.RadTimeSpanPickerElement">RadTimeSpanPickerElement</see> which encapsulates the UI representation and functionality of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.PopupContentElement">
+            <summary> 
+            Gets the <see cref="T:Telerik.WinControls.UI.ITimeSpanPickerContentElement"/>. Represents the element of the pop-up.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.DefaultSize">
+            <summary>
+            Gets the default size of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.AutoSize">
+            <summary>
+            Gets or sets whether the edit control is auto-sized
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.Culture">
+            <summary>
+            Gets or sets the current culture associated to the RadTimeSpanPicker
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.EditMode">
+            <summary>
+            Gets or sets a value indicating how the users will edit the TimeSpan value. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.DaysStep">
+            <summary>
+            Gets or sets the days step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.HoursStep">
+            <summary>
+            Gets or sets the hours step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.MinutesStep">
+            <summary>
+            Gets or sets the minutes step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.SecondsStep">
+            <summary>
+            Gets or sets the seconds step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.MillisecondsStep">
+            <summary>
+            Gets or sets the milliseconds step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.ReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the contents of the TextBox control can be changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.EnableNullValueInput">
+            <summary>
+            Gets or set a value indicating whether end users can set the value to NULL.
+            This can be achieved by pressing Ctrl + Del or Ctrl + 0 key combinations.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.NullText">
+            <summary>
+            Gets or sets the text that is displayed when RadTimeSpanPicker has no text set.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.Value">
+            <summary>
+            Gets or sets the time value assigned to the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.MinValue">
+            <summary>
+            Gets or sets the Minimal TimeSpan value assigned to the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.MaxValue">
+            <summary>
+            Gets or sets the Maximal TimeSpan value assigned to the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.Format">
+            <summary>
+            Gets or sets the format string.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPicker.ShowSpinButtons">
+            <summary>
+            Gets or sets a value indicating whether the spin buttons will be shown.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.ValueChanging">
+            <summary>
+            Occurs when the editing value is about to be changed. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.ValueChanged">
+            <summary>
+            Occurs when the editing value has been changed
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.KeyDown">
+            <summary>
+            Occurs when the RadItem has focus and the user presses a key down
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.KeyPress">
+            <summary>
+            Occurs when the RadItem has focus and the user presses a key
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.KeyUp">
+            <summary>
+            Occurs when the RadItem has focus and the user releases the pressed key up
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.PopupOpening">
+            <summary>
+            Occurs when the pop-up about to be opened. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.PopupOpened">
+            <summary>
+            Occurs when the pop-up is opened.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.PopupClosing">
+            <summary>
+            Occurs when the pop-up about to be closed. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPicker.PopupClosed">
+            <summary>
+            Occurs when the pop-up is closed.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.CreateMaskedEditBoxElement">
+            <summary>
+            Creates the masked edit box element.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.CreatePopupForm">
+            <summary>
+            Creates the pop-up instance. You have to override this method in order to provide a pop-up
+            that is specialized by its content.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.CreateDropDownButtonElement">
+            <summary>
+            Creates the drop down button element.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.CreateButtonsStack">
+            <summary>
+            Creates the StackLayoutElement that holds up and down arrow buttons.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.CreateUpButton">
+            <summary>
+            Creates the button element for the increment button.
+            </summary>
+            <returns>A <see cref="T:Telerik.WinControls.UI.RadRepeatArrowElement"/> to be placed in the <see cref="T:Telerik.WinControls.UI.RadSpinElement"/>.</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.CreateDownButton">
+            <summary>
+            Creates the button element for the decrement button.
+            </summary>
+            <returns>A <see cref="T:Telerik.WinControls.UI.RadRepeatArrowElement"/> to be placed in the <see cref="T:Telerik.WinControls.UI.RadSpinElement"/>.</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.WireEvents">
+            <summary>
+            Subscribes to the necessary events.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.UnwireEvents">
+            <summary>
+            Unsubscribes from all subscribed events.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadTimeSpanPickerElement.DisposeManagedResources">
+            <summary>
+            Disposes the managed resources.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.ThemeEffectiveType">
+            <summary>
+            Gets the theme effective type.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.MaskedEditBox">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.UI.RadMaskedEditBoxElement"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.EditMode">
+            <summary>
+            Gets or sets a value indicating how the users will edit the TimeSpan value. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.PopupContentElement">
+            <summary> 
+            Gets the <see cref="T:Telerik.WinControls.UI.ITimeSpanPickerContentElement"/>. Represents the element of the pop-up.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.DropDownButton">
+            <summary>
+            Gets the <see cref="T:Telerik.WinControls.UI.RadTimeDropDownButtonElement"/> used to open the pop-up.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.UpButton">
+            <summary>
+            Gets up button.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.DownButton">
+            <summary>
+            Gets down button.
+            </summary>
+            <value>Down button.</value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.PopupForm">
+            <summary>
+            Gets the pop-up form.
+            </summary>
+            <value>The pop-up form.</value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.SpinButtonsStackLayout">
+            <summary>
+            Gets the spin buttons stack layout.
+            </summary>
+            <value>The spin buttons stack layout.</value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.PopupMinSize">
+            <summary>
+            Gets or sets the minimum size of pop-up form.
+            </summary>
+            <value>The pop-up form.</value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.Format">
+            <summary>
+            Gets or sets the format string.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.Culture">
+            <summary>
+            Gets or sets the culture.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.ReadOnly">
+            <summary>
+            Enables or disables the ReadOnly mode of RadTimeSpanPicker. The default value is false.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.ShowDropDownButton">
+            <summary>
+            Gets or sets a value indicating whether the drop down button will be shown.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.ShowSpinButtons">
+            <summary>
+            Gets or sets a value indicating whether the spin buttons will be shown.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.DropDownAnimationEnabled">
+            <summary>
+            Gets or sets a value indicating whether the RadDropDownList will be animated when displaying.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.EnableNullValueInput">
+            <summary>
+            Gets or set a value indicating whether end users can set the value to NULL.
+            This can be achieved by pressing Ctrl + Del or Ctrl + 0 key combinations.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.NullText">
+            <summary>
+            Gets or sets the text that is displayed when RadDropDownList has no text set.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.Value">
+            <summary>
+            Gets or sets the value of <see cref="T:Telerik.WinControls.UI.RadTimeSpanPickerElement"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.MinValue">
+            <summary>
+            Gets or sets the min value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.MaxValue">
+            <summary>
+            Gets or sets the max value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.DaysStep">
+            <summary>
+            Gets or sets the days step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.HoursStep">
+            <summary>
+            Gets or sets the hours step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.MinutesStep">
+            <summary>
+            Gets or sets the minutes step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.SecondsStep">
+            <summary>
+            Gets or sets the seconds step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.MillisecondsStep">
+            <summary>
+            Gets or sets the milliseconds step used when modifying the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimeSpanPickerElement.TimeSpanProvider">
+            <summary>
+            Gets the provider of hosted MaskedEditBoxElement. This provider is used to format the value and controls how editing is performed in each part(days, hours, minutes, seconds and milliseconds) of selected Format.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPickerElement.ValueChanging">
+            <summary>
+            Occurs when the editing value is changing.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadTimeSpanPickerElement.ValueChanged">
+            <summary>
+            Occurs when the editing value has been changed
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.TimeSpanEditMode">
+            <summary>
+            This mode indicates how the users will edit the TimeSpan value. 
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.TimeSpanEditMode.Mask">
+            <summary>
+            The value will be edited in masked edit box.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.TimeSpanEditMode.Popup">
+            <summary>
+            The value will be edited only in pop-up.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.TimeSpanEditMode.Combined">
+            <summary>
+            The value is modified both in masked edit box and pop-up.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.Wizard97CommandArea">
@@ -50203,6 +52334,16 @@
             Specify zero to prevent displaying any splitters at all.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadSplitContainer.VerticalResizeCursor">
+            <summary>
+            Gets or sets the cursor which is used while resizing a panel and the control`s orientation is vertical.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadSplitContainer.HorizontalResizeCursor">
+            <summary>
+            Gets or sets the cursor which is used while resizing a panel and the control`s orientation is horizontal.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadSplitContainer.LayoutStrategy">
             <summary>
             Gets or sets the layout strategy that arranges all the visible SplitPanel children.
@@ -52056,6 +54197,18 @@
             Gets the exporting tree node.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadBreadCrumb.UseMnemonic">
+            <summary>
+            Gets or sets a value indicating whether the control interprets an ampersand character (&#38;)
+            in the control's Text property to be an access key prefix character.
+            </summary>
+            <returns>
+            true if the label doesn't display the ampersand character and underlines the character
+            after the ampersand in its displayed text and treats the underlined character as an access key;
+            otherwise, false if the ampersand character is displayed in the text of the control.
+            The default is true.
+            </returns>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadBreadCrumb.SelectTreeNodeOnClick">
             <summary>
             Determines whether a tree node will be selected upon clicking on the action part of the split button element. The default value is false and click on the action part will result in opening the popup with the menu items.
@@ -52145,6 +54298,11 @@
         <member name="T:Telerik.WinControls.UI.TreeViewSpinEditor">
             <summary>
             Represents a spin editor in RadTreeView.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.TreeViewTimeSpanEditor">
+            <summary>
+            Represents a time span editor in RadTreeView.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.TreeViewTraversingEventHandler">
@@ -58538,340 +60696,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.#cctor">
-            <summary>
-            Initializes a new instance of the RadTextBoxBase class.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.#ctor">
-            <summary>
-            Represents RadTextBoxBase constructor
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.InitializeTextElement">
-            <summary>
-            Initializes textbox's children
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.AppendText(System.String)">
-            <summary>
-            Appends text to the current text.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Clear">
-            <summary>
-            Empties the TextBox.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.ClearUndo">
-            <summary>
-            Undo to the previous text value before clear invocation.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Copy">
-            <summary>
-            Copies the text value to the clipboard.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Cut">
-            <summary>
-            Cuts the text value to the clipboard.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.DeselectAll">
-            <summary>
-            <para>Deselects the text in the cotrol.</para>
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetCharFromPosition(System.Drawing.Point)">
-            <summary>
-            Retrieves the character that is closest to the specified location within the
-            control.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetCharIndexFromPosition(System.Drawing.Point)">
-            <summary>
-            Retrieves the index of the character nearest to the specified location.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetFirstCharIndexFromLine(System.Int32)">
-            <summary>
-            Retrieves the index of the first character of a given line.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetFirstCharIndexOfCurrentLine">
-            <summary>
-            	<para>Retrieves the index of the first character of the current line. This method
-                is not supported by MaskedTextBox.</para>
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetLineFromCharIndex(System.Int32)">
-            <summary>
-            	<para>Retrieves the line number from the specified character position within the
-                text of the control.</para>
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.GetPositionFromCharIndex(System.Int32)">
-            <summary>
-            	<para>Retrieves the location within the control at the specified character
-                index.</para>
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Paste">
-            <summary>
-            Pastes the text value to the clipboard.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Paste(System.String)">
-            <summary>
-            Pastes the string parameter to the clipboard.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.ScrollToCaret">
-            <summary>
-            Scrolls the contents of the control to the current caret position.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Select(System.Int32,System.Int32)">
-            <summary>
-            Selects the text in the TextBox from the start position inclusive to the end
-            position exclusive.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.SelectAll">
-            <summary>
-            Selects the text in the TextBox.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Undo">
-            <summary>
-            Undoes the last edit operation in the text box.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Focus">
-            <summary>
-            Sets input focus to the control.
-            </summary>
-            <returns>true if the input focus request was successful; otherwise, false.
-            </returns>		
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.Select">
-            <summary>
-            Activates the control.
-            </summary>		
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnAcceptsTabChanged(System.EventArgs)">
-            <summary>
-            Raises the AcceptsTabChanged event.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnHideSelectionChanged(System.EventArgs)">
-            <summary>
-            Raises the HideSelectionChanged event.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnModifiedChanged(System.EventArgs)">
-            <summary>
-            Raises the ModifiedChanged event.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnMultilineChanged(System.EventArgs)">
-            <summary>
-            Raises the MultilineChanged event.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnReadOnlyChanged(System.EventArgs)">
-            <summary>
-            Raises the ReadOnlyChanged event.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnTextAlignChanged(System.EventArgs)">
-            <summary>
-            Raises the TextAlignChanged event.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBoxBase.OnTextChanging(Telerik.WinControls.TextChangingEventArgs)">
-            <summary>
-            Raises the TextChanging event.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.AutoSize">
-            <summary>
-            Gets or sets whether the edit control is auto-sized
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Text">
-            <summary>Gets or sets the displayed text.</summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Font">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl03_LabelAbstract">Gets or sets
-            the font of the text displayed by the control.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.AcceptsReturn">
-            <summary>
-            Gets or sets a value indicating whether pressing ENTER in a multiline RadTextBox
-            control creates a new line of text in the control or activates the default button for
-            the form.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.AcceptsTab">
-            <summary>
-            Gets or sets a value indicating whether pressing the TAB key in a multiline text
-            box control types a TAB character in the control instead of moving the focus to the
-            next control in the tab order.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.CanUndo">
-            <summary>Gets value indicating whether undo is allowed.</summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.CharacterCasing">
-            <summary>
-            	<para>Gets or sets a value indicating whether the RadTextBox control modifies the
-                case of characters as they are typed.</para>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.HideSelection">
-            <summary>
-            	<para>Gets or sets a value indicating whether the selected text remains highlighted
-                even when the RadTextBox has lost the focus.</para>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Lines">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            the lines of text in multiline configurations.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.MaxLength">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            the maximum number of characters allowed in the text box.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Modified">
-            <summary>
-            Gets or sets a value indicating whether the RadTextBox control has been modified
-            by the user since the control was created or since its contents were last set.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.Multiline">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            a value indicating whether this is a multiline TextBox control.</span>
-            When the value is true, the AutoSize property is automatically changed to false and the user needs to take care of the height of this control.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.NullText">
-            <summary>
-            Gets or sets the text that is displayed when the ComboBox contains a null 
-            reference. 
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ShowNullText">
-            <summary>
-            Gets or sets a value indicating whether the null text will be shown when the control is focused and the text is empty.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.PasswordChar">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            the character used to mask characters of a password in a single-line TextBox
-            control.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ReadOnly">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            a value indicating whether the contents of the TextBox control can be
-            changed.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ScrollBars">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            which scroll bars should appear in a multiline TextBox control.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.SelectedText">
-            <summary>
-            Gets or sets a value indicating the currently selected text in the
-            control.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.SelectionLength">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            the number of characters selected in the text box.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.SelectionStart">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            the starting point of text selected in the text box.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ShortcutsEnabled">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
-            a value indicating whether the defined shortcuts are enabled.</span>
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.TextAlign">
-            <summary>Gets or sets how text is aligned in a TextBox control.</summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.TextLength">
-            <summary>Gets the length of the text in the control.</summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.WordWrap">
-            <summary>
-            	<para>Gets or sets a value indicating whether a multiline text box control
-                automatically wraps words to the beginning of the next line when necessary.</para>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.AcceptsTabChanged">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
-            the value of the AcceptsTab property has changed.</span>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.HideSelectionChanged">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
-            the value of the HideSelection property changes.</span>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.ModifiedChanged">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
-            the value of the Modified property has changed.</span>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.MultilineChanged">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl02_LabelAbstract">Occurs when
-            the value of the Multiline property has changed.</span>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.ReadOnlyChanged">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Occurs when
-            the ReadOnly property changes.</span>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.TextAlignChanged">
-            <summary>
-            	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl03_LabelAbstract">Occurs when
-            the value of the TextAlign property has changed.</span>
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.RadTextBoxBase.TextChanging">
-            <summary>
-            	<para><span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl03_LabelAbstract">Occurs
-                when text is being changed.</span></para>
-            </summary>
-        </member>
         <member name="T:Telerik.WinControls.UI.HostedTextBoxBase">
             <summary>
             The TextBox control that is hosted by default by RadTextBoxItem.
@@ -58904,64 +60728,6 @@
             Gets or sets a value indicating whether to show the bottom part of characters, clipped 
             due to font name or size particularities
             </summary>
-        </member>
-        <member name="T:Telerik.WinControls.UI.RadTextBox">
-            <exclude/>
-            <summary>
-                Represents a RadTextBox. The RadTextBox control serves as a simple wrapper for
-                <see cref="T:Telerik.WinControls.UI.RadTextBoxElement">RadTextBoxElement class</see> which in turn wraps
-                <see cref="T:Telerik.WinControls.UI.RadTextBoxItem">RadTextBoxItem Class</see>. All logic and presentation
-                features are implemented in a parallel hierarchy of objects. For this reason,
-                <see cref="T:Telerik.WinControls.UI.RadTextBoxElement">RadTextBoxElement class</see> may be nested in any
-                other telerik control, item, or element. RadTextBox acts to transfer events to and
-                from its corresponding instance of the
-                <see cref="T:Telerik.WinControls.UI.RadTextBoxElement">RadTextBoxElement class</see>.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBox.#ctor">
-            <summary>
-            Represents RadTextBox's constructor
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadTextBox.InitializeTextElement">
-            <summary>
-            Initializes textbox's children
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBox.TextBoxElement">
-            <summary>
-            Gets the instance of RadTextBoxElement wrapped by this control. RadTextBoxElement
-            is the main element in the hierarchy tree and encapsulates the actual functionality of RadTextBox.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBox.UseGenericBorderPaint">
-            <summary>
-            Gets or sets a value indicating whether to show the bottom part of characters, clipped 
-            due to font name or size particularities
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBox.UseSystemPasswordChar">
-            <summary>
-            Gets or sets a value indicating whether the text should appear as the default password character.
-            </summary>
-            <value>
-            <c>true</c> if the text otherwise hould appear as the default password character; <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBox.ShowClearButton">
-            <summary>
-            Gets or sets a value indicating whether the clear button is shown.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadTextBox.CausesValidation">
-            <summary>
-            Gets or sets a value indicating whether the control causes validation to be
-            performed on any controls that require validation when it receives focus.
-            </summary>
-            <value>
-            true if the control causes validation to be performed on any controls requiring
-            validation when it receives focus; otherwise, false.
-            </value>
         </member>
         <member name="T:Telerik.WinControls.UI.CheckBoxLayoutPanel">
             <summary>
