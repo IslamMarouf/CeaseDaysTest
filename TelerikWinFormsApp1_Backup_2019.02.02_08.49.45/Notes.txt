@@ -1,0 +1,93 @@
+﻿*********************************************************************************************************************
+ temp function and code tests.
+**********************************************************************************************************************
+List<DateTime> dList = new List<DateTime>();
+            List<ConsecutiveDate> resultList = new List<ConsecutiveDate>();
+            //
+            for (int i = 1; i <= 2000; i++) {
+                int offset = rand.Next(1, 2000);
+                DateTime d = DateTime.Today.AddDays(offset);
+                if (!dList.Contains(d)) {
+                    dList.Add(d);
+                }
+            }
+
+            //
+            string allDaysTextFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\AllDays.txt";
+            StringBuilder sb = new StringBuilder();
+            //
+            for (int i = 0; i < dList.Count; i++) {
+                sb.AppendLine(dList[i].ToShortDateString());
+            }
+
+            //
+            File.WriteAllText(allDaysTextFile, sb.ToString());
+            //
+            dList.Sort();
+            //
+            for (int i = 0; i < dList.Count; i++) {
+                if (i > 0) {
+                    DateTime dayBefore = dList[i - 1];
+                    DateTime thisDay = dList[i];
+                    bool containsFriday =
+                        dayBefore.DayOfWeek == DayOfWeek.Friday || thisDay.DayOfWeek == DayOfWeek.Friday;
+                    //
+                    if (dayBefore.DayOfWeek > DayOfWeek.Sunday && dayBefore.DayOfWeek < DayOfWeek.Saturday) {
+                        //
+                        if (thisDay.DayOfWeek > DayOfWeek.Sunday && thisDay.DayOfWeek < DayOfWeek.Saturday) {
+                            //
+                            if (containsFriday) {
+                                // Determine which of them is Friday
+                                if (dayBefore.DayOfWeek == DayOfWeek.Friday) {
+                                    if (thisDay.DayOfWeek == DayOfWeek.Monday) {
+                                        ConsecutiveDate thisDateSet = new ConsecutiveDate();
+                                        thisDateSet.Date1 = dayBefore;
+                                        thisDateSet.Date2 = thisDay;
+                                        resultList.Add(thisDateSet);
+                                    }
+                                }
+                                else {
+                                    if (dayBefore.DayOfWeek == DayOfWeek.Monday) {
+                                        if (CeaseDaysFormatter.DateDiff(CeaseDaysFormatter.DateInterval.Day, dayBefore, thisDay) == 4) {
+                                            ConsecutiveDate thisDateSet = new ConsecutiveDate();
+                                            thisDateSet.Date1 = dayBefore;
+                                            thisDateSet.Date2 = thisDay;
+                                            resultList.Add(thisDateSet);
+                                        }
+                                    }
+                                }
+                            }
+                            else {
+                                if (CeaseDaysFormatter.DateDiff(CeaseDaysFormatter.DateInterval.Day, dayBefore, thisDay) == 1) {
+                                    ConsecutiveDate thisDateSet = new ConsecutiveDate();
+                                    thisDateSet.Date1 = dayBefore;
+                                    thisDateSet.Date2 = thisDay;
+                                    resultList.Add(thisDateSet);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //
+            string consecutiveDaysFile =
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ConsecutiveDays.txt";
+            sb.Length = 0;
+            //
+            for (int i = 0; i < resultList.Count; i++) {
+                if (i > 0) {
+                    sb.AppendLine();
+                    sb.AppendLine("------------------------------");
+                    sb.AppendLine();
+                }
+
+                sb.AppendLine(resultList[i].Date1.ToShortDateString());
+                sb.AppendLine(resultList[i].Date2.ToShortDateString());
+            }
+
+            //
+            File.WriteAllText(consecutiveDaysFile, sb.ToString());
+
+*********************************************************************************************************************
+*********************************************************************************************************************
