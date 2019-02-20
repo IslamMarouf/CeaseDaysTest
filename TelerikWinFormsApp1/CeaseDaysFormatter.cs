@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Telerik.WinControls.UI;
 
@@ -239,8 +240,10 @@ namespace TelerikWinFormsApp1
                         rangeString += $" ({dList.Count} from ";
                         rangeString += $"{dList.First():d/M} to {dList.Last().ToShortDateString()}";
                     }
-
+                    i++;
                 }
+
+                
 
                 // ----------------------------------------------------------------------------
 
@@ -278,7 +281,9 @@ namespace TelerikWinFormsApp1
                             }
                         }
 
-                        //i--;
+                        i++;
+
+                        //Debug.WriteLine("Last(): " + dList.Last() + "  list[i]: " + list[i + 1]);
                     }
 
                     //i++;
